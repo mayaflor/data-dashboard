@@ -9,3 +9,15 @@
             sprints
               |
             notas
+
+          Tradução
+            'promoters': 78,/*Promoveriam*/
+            'passive': 13, /*neutra */ 
+            'detractors': 9 /*Não promoveriam*/
+          },
+          'student': {
+            'no-cumple': 17,/*Muito satisfa*/
+            'cumple': 63,/*neutra*/
+            'supera': 20 /*Insastifeita*/
+          },
+           
