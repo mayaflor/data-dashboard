@@ -1,0 +1,11 @@
+                      Sede   
+                        |
+                      Geração 
+                      /    \ 
+            estudantes      ratings
+                /         /     |     \     \
+            dados     sprints  nps  student professor jedi
+              |
+            sprints
+              |
+            notas
