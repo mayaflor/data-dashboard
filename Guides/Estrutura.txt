@@ -1,0 +1,12 @@
+-mvp-pequenas versões
+-Estrutura ordem de prioridade (parecida com twitter)
+-
+
+estrutura >js>estilo
+max tech 1800
+max hse 1200
+
+nps está em %.
+
+notas dos professores e jedai valor max é ate 5.
+nem todas as turmas tem a mesma quantidade de sprint
