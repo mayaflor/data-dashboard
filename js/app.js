@@ -136,3 +136,31 @@ function donutchartActiveSCL() {
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveSCL'));
   chart.draw(chartData, options);
 }
+
+
+
+
+
+// --------------LABORATÓRIA-------------
+
+
+// gráfico alunas presentes e desistentes em LAB
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(donutchartActiveLAB);
+function donutchartActiveLAB() {
+    
+  var activeTrueLab = activeTrueAQP + activeTrueCDMX + activeTrueLIM +activeTrueSCL;
+  var activeFalseLab = activeFalseAQP + activeFalseCDMX + activeFalseLIM +activeFalseSCL;
+  var chartData = google.visualization.arrayToDataTable([
+    ['',''],
+    ['presentes',activeTrueLab],
+    ['desistentes',activeFalseLab],
+  ]);
+  var options = {
+    title: 'Número de alunas presentes e desistentes na Laboratória',
+    pieHole: 0.4,
+  };
+  var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveLAB'));
+  chart.draw(chartData, options);
+}
+
