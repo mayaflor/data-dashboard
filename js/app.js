@@ -268,3 +268,40 @@ function donutchartActiveLAB() {
   chart.draw(chartData, options);
 }
 
+//-------------NPS POR TURMA SCL 2017-2------------//
+
+var promotoras = 0;
+var pasivas = 0;
+var detractoras = 0;
+for ( turma in data['SCL'])
+for (i in data['SCL']['2017-2']['ratings']){
+ promotoras += data['SCL']['2017-2']['ratings'][i]['nps']['promoters'];
+ pasivas += data['SCL']['2017-2']['ratings'][i]['nps']['passive'];
+ detractoras += data['SCL']['2017-2']['ratings'][i]['nps']['detractors'];
+var total = promotoras + pasivas + detractoras;
+var promoters = (promotoras / total) *100;
+var passive = (pasivas / total)*100;
+var detractors = (detractoras / total) *100;
+var nps = promoters - detractors;
+
+}
+//-----GRAFICO NPS SCL ------// 
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChartNPS);
+function drawChartNPS() {
+var data = google.visualization.arrayToDataTable([
+['', ''],
+['promotoras',promotoras],
+['pasivas', pasivas],
+['detractoras', detractoras],
+
+]);
+
+var options = {
+title: 'NPS: SCL-2017-2',
+pieHole: 0.4,
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchartNPS'));
+chart.draw(data, options);
+}
