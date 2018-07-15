@@ -136,7 +136,6 @@ function curveChartGradesAQP() {
   chart.draw(chartData, options);
 }
 
-
 // O percentual de alunas satisfeitas com a experiência da Laboratória de AQP 2016-2
 var noCumpleAQP1 = [] ;
 var cumpleAQP1 = [] ;
@@ -221,6 +220,94 @@ function donutchartActiveCDMX() {
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveCDMX'));
   chart.draw(chartData, options);
 }
+
+
+// notas maiores que a média CDMX
+
+// 'CDMX' '2017-1' 'number': 1
+var hseScoresCDMX10 = [];
+var techScoresCDMX10 = [];
+for (i in data['CDMX']['2017-1']['students']) {
+  hseScoresCDMX10.push(data['CDMX']['2017-1']['students'][i]['sprints'][0]['score']['hse']);
+  techScoresCDMX10.push(data['CDMX']['2017-1']['students'][i]['sprints'][0]['score']['tech']);
+}
+var avarageHseScoresCDMX10 = (hseScoresCDMX10.reduce((a, b) => a + b)) / hseScoresCDMX10.length ;
+var avarageTechScoresCDMX10 = (techScoresCDMX10.reduce((a, b) => a + b)) / techScoresCDMX10.length ;
+var totalHseScoresCDMX10 = avarageHseScoresCDMX10 + avarageTechScoresCDMX10;
+
+// 'CDMX' '2017-1' 'number': 2
+var hseScoresCDMX11 = [];
+var techScoresCDMX11 = [];
+for (i in data['CDMX']['2017-1']['students']) {
+  hseScoresCDMX11.push(data['CDMX']['2017-1']['students'][i]['sprints'][1]['score']['hse']);
+  techScoresCDMX11.push(data['CDMX']['2017-1']['students'][i]['sprints'][1]['score']['tech']);
+}
+var avarageHseScoresCDMX11 = (hseScoresCDMX11.reduce((a, b) => a + b)) / hseScoresCDMX11.length ;
+var avarageTechScoresCDMX11 = (techScoresCDMX11.reduce((a, b) => a + b)) / techScoresCDMX11.length ;
+var totalHseScoresCDMX11 = avarageHseScoresCDMX11 + avarageTechScoresCDMX11;
+
+// 'CDMX' '2017-1' 'number': 3
+var hseScoresCDMX12 = [];
+var techScoresCDMX12 = [];
+for (i in data['CDMX']['2017-1']['students']) {
+  hseScoresCDMX12.push(data['CDMX']['2017-1']['students'][i]['sprints'][2]['score']['hse']);
+  techScoresCDMX12.push(data['CDMX']['2017-1']['students'][i]['sprints'][2]['score']['tech']);
+}
+var avarageHseScoresCDMX12 = (hseScoresCDMX12.reduce((a, b) => a + b)) / hseScoresCDMX12.length ;
+var avarageTechScoresCDMX12 = (techScoresCDMX12.reduce((a, b) => a + b)) / techScoresCDMX12.length ;
+var totalHseScoresCDMX12 = avarageHseScoresCDMX12 + avarageTechScoresCDMX12;
+
+// 'CDMX' '2017-2' 'number': 1
+var hseScoresCDMX20 = [];
+var techScoresCDMX20 = [];
+for (i in data['CDMX']['2017-2']['students']) {
+  if (data['CDMX']['2017-2']['students'][i]['active'] === true ){
+    hseScoresCDMX20.push(data['CDMX']['2017-2']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresCDMX20.push(data['CDMX']['2017-2']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresCDMX20 = (hseScoresCDMX20.reduce((a, b) => a + b)) / hseScoresCDMX20.length ;
+var avarageTechScoresCDMX20 = (techScoresCDMX20.reduce((a, b) => a + b)) / techScoresCDMX20.length ;
+var totalHseScoresCDMX20 = avarageHseScoresCDMX20 + avarageTechScoresCDMX20;
+
+// 'CDMX' '2017-2' 'number': 2
+var hseScoresCDMX21 = [];
+var techScoresCDMX21 = [];
+for (i in data['CDMX']['2017-2']['students']) {
+  if (data['CDMX']['2017-2']['students'][i]['active'] === true ){
+  hseScoresCDMX21.push(data['CDMX']['2017-2']['students'][i]['sprints'][1]['score']['hse']);
+  techScoresCDMX21.push(data['CDMX']['2017-2']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresCDMX21 = (hseScoresCDMX21.reduce((a, b) => a + b)) / hseScoresCDMX21.length ;
+var avarageTechScoresCDMX21 = (techScoresCDMX21.reduce((a, b) => a + b)) / techScoresCDMX21.length ;
+var totalHseScoresCDMX21 = avarageHseScoresCDMX21 + avarageTechScoresCDMX21;
+
+// gráfico notas maiores que a média CDMX
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartGradesCDMX);
+
+function curveChartGradesCDMX() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Sprint', 'Notas HSE', 'Notas Tech', 'Notas Totais'],
+    ['Turma 2017-1, sprint 1',avarageHseScoresCDMX10,avarageTechScoresCDMX10, totalHseScoresCDMX10],
+    ['Turma 2017-1, sprint 2',avarageHseScoresCDMX11,avarageTechScoresCDMX11, totalHseScoresCDMX11],
+    ['Turma 2017-1, sprint 3',avarageHseScoresCDMX12,avarageTechScoresCDMX12, totalHseScoresCDMX12],
+    ['Turma 2017-2, sprint 1',avarageHseScoresCDMX20,avarageTechScoresCDMX20, totalHseScoresCDMX20],
+    ['Turma 2017-2, sprint 2',avarageHseScoresCDMX21,avarageTechScoresCDMX21, totalHseScoresCDMX21]
+  ]);
+
+  var options = {
+    title: 'Média de notas na Cidade do México',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesCDMX'));
+
+  chart.draw(chartData, options);
+}
+
+
+
 
 
 // O percentual de alunas satisfeitas com a experiência da Laboratória de CDMX 2017-1
@@ -308,6 +395,137 @@ function donutchartActiveLIM() {
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveLIM'));
   chart.draw(chartData, options);
 }
+
+
+
+// notas maiores que a média LIM
+
+// 'LIM' '2016-2' 'number': 1
+var hseScoresLIM10 = [];
+var techScoresLIM10 = [];
+for (i in data['LIM']['2016-2']['students']) {
+  if (data['LIM']['2016-2']['students'][i]['active'] === true ){
+    hseScoresLIM10.push(data['LIM']['2016-2']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresLIM10.push(data['LIM']['2016-2']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresLIM10 = (hseScoresLIM10.reduce((a, b) => a + b)) / hseScoresLIM10.length ;
+var avarageTechScoresLIM10 = (techScoresLIM10.reduce((a, b) => a + b)) / techScoresLIM10.length ;
+var totalHseScoresLIM10 = avarageHseScoresLIM10 + avarageTechScoresLIM10;
+
+// 'LIM' '2016-2' 'number': 2
+var hseScoresLIM11 = [];
+var techScoresLIM11 = [];
+for (i in data['LIM']['2016-2']['students']) {
+  if (data['LIM']['2016-2']['students'][i]['active'] === true ){
+    hseScoresLIM11.push(data['LIM']['2016-2']['students'][i]['sprints'][1]['score']['hse']);
+    techScoresLIM11.push(data['LIM']['2016-2']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresLIM11 = (hseScoresLIM11.reduce((a, b) => a + b)) / hseScoresLIM11.length ;
+var avarageTechScoresLIM11 = (techScoresLIM11.reduce((a, b) => a + b)) / techScoresLIM11.length ;
+var totalHseScoresLIM11 = avarageHseScoresLIM11 + avarageTechScoresLIM11;
+
+// 'LIM' '2017-1' 'number': 1
+var hseScoresLIM20 = [];
+var techScoresLIM20 = [];
+for (i in data['LIM']['2017-1']['students']) {
+  if (data['LIM']['2017-1']['students'][i]['active'] === true ){
+    hseScoresLIM20.push(data['LIM']['2017-1']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresLIM20.push(data['LIM']['2017-1']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresLIM20 = (hseScoresLIM20.reduce((a, b) => a + b)) / hseScoresLIM20.length ;
+var avarageTechScoresLIM20 = (techScoresLIM20.reduce((a, b) => a + b)) / techScoresLIM20.length ;
+var totalHseScoresLIM20 = avarageHseScoresLIM20 + avarageTechScoresLIM20;
+
+// 'LIM' '2017-1' 'number': 2
+var hseScoresLIM21 = [];
+var techScoresLIM21 = [];
+for (i in data['LIM']['2017-1']['students']) {
+  if (data['LIM']['2017-1']['students'][i]['active'] === true ){
+    hseScoresLIM21.push(data['LIM']['2017-1']['students'][i]['sprints'][1]['score']['hse']);
+    techScoresLIM21.push(data['LIM']['2017-1']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresLIM21 = (hseScoresLIM21.reduce((a, b) => a + b)) / hseScoresLIM21.length ;
+var avarageTechScoresLIM21 = (techScoresLIM21.reduce((a, b) => a + b)) / techScoresLIM21.length ;
+var totalHseScoresLIM21 = avarageHseScoresLIM21 + avarageTechScoresLIM21;
+
+// 'LIM' '2017-1' 'number': 3
+var hseScoresLIM22 = [];
+var techScoresLIM22 = [];
+for (i in data['LIM']['2017-1']['students']) {
+  if (data['LIM']['2017-1']['students'][i]['active'] === true ){
+    hseScoresLIM22.push(data['LIM']['2017-1']['students'][i]['sprints'][2]['score']['hse']);
+    techScoresLIM22.push(data['LIM']['2017-1']['students'][i]['sprints'][2]['score']['tech']);}
+}
+var avarageHseScoresLIM22 = (hseScoresLIM22.reduce((a, b) => a + b)) / hseScoresLIM22.length ;
+var avarageTechScoresLIM22 = (techScoresLIM22.reduce((a, b) => a + b)) / techScoresLIM22.length ;
+var totalHseScoresLIM22 = avarageHseScoresLIM22 + avarageTechScoresLIM22;
+
+// 'LIM' '2017-1' 'number': 4
+var hseScoresLIM23 = [];
+var techScoresLIM23 = [];
+for (i in data['LIM']['2017-1']['students']) {
+  if (data['LIM']['2017-1']['students'][i]['active'] === true ){
+    hseScoresLIM23.push(data['LIM']['2017-1']['students'][i]['sprints'][3]['score']['hse']);
+    techScoresLIM23.push(data['LIM']['2017-1']['students'][i]['sprints'][3]['score']['tech']);}
+}
+var avarageHseScoresLIM23 = (hseScoresLIM23.reduce((a, b) => a + b)) / hseScoresLIM23.length ;
+var avarageTechScoresLIM23 = (techScoresLIM23.reduce((a, b) => a + b)) / techScoresLIM23.length ;
+var totalHseScoresLIM23 = avarageHseScoresLIM23 + avarageTechScoresLIM23;
+
+// 'LIM' '2017-2' 'number': 1
+var hseScoresLIM30 = [];
+var techScoresLIM30 = [];
+for (i in data['LIM']['2017-2']['students']) {
+  if (data['LIM']['2017-2']['students'][i]['active'] === true ){
+    hseScoresLIM30.push(data['LIM']['2017-2']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresLIM30.push(data['LIM']['2017-2']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresLIM30 = (hseScoresLIM30.reduce((a, b) => a + b)) / hseScoresLIM30.length ;
+var avarageTechScoresLIM30 = (techScoresLIM30.reduce((a, b) => a + b)) / techScoresLIM30.length ;
+var totalHseScoresLIM30 = avarageHseScoresLIM30 + avarageTechScoresLIM30;
+
+// 'LIM' '2017-2' 'number': 2
+var hseScoresLIM31 = [];
+var techScoresLIM31 = [];
+for (i in data['LIM']['2017-2']['students']) {
+  if (data['LIM']['2017-2']['students'][i]['active'] === true ){
+    hseScoresLIM31.push(data['LIM']['2017-2']['students'][i]['sprints'][1]['score']['hse']);
+    techScoresLIM31.push(data['LIM']['2017-2']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresLIM31 = (hseScoresLIM31.reduce((a, b) => a + b)) / hseScoresLIM31.length ;
+var avarageTechScoresLIM31 = (techScoresLIM31.reduce((a, b) => a + b)) / techScoresLIM31.length ;
+var totalHseScoresLIM31 = avarageHseScoresLIM31 + avarageTechScoresLIM31;
+
+// gráfico notas maiores que a média LIM
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartGradesLIM);
+
+function curveChartGradesLIM() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Sprint', 'Notas HSE', 'Notas Tech', 'Notas Totais'],
+    ['Turma 2016-2, sprint 1',avarageHseScoresLIM10,avarageTechScoresLIM10, totalHseScoresLIM10],
+    ['Turma 2016-2, sprint 2',avarageHseScoresLIM11,avarageTechScoresLIM11, totalHseScoresLIM11],
+    ['Turma 2017-1, sprint 1',avarageHseScoresLIM20,avarageTechScoresLIM20, totalHseScoresLIM20],
+    ['Turma 2017-1, sprint 2',avarageHseScoresLIM21,avarageTechScoresLIM21, totalHseScoresLIM21],
+    ['Turma 2017-1, sprint 3',avarageHseScoresLIM22,avarageTechScoresLIM22, totalHseScoresLIM22],
+    ['Turma 2017-1, sprint 4',avarageHseScoresLIM23,avarageTechScoresLIM23, totalHseScoresLIM23],
+    ['Turma 2017-2, sprint 1',avarageHseScoresLIM30,avarageTechScoresLIM30, totalHseScoresLIM30],
+    ['Turma 2017-2, sprint 2',avarageHseScoresLIM31,avarageTechScoresLIM31, totalHseScoresLIM31]
+  ]);
+
+  var options = {
+    title: 'Média de notas em Lima',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesLIM'));
+
+  chart.draw(chartData, options);
+}
+
+
+
 
 // O percentual de alunas satisfeitas com a experiência da Laboratória de LIM 2016-2
 var noCumpleLIM1 = [] ;
@@ -409,6 +627,152 @@ function donutchartActiveSCL() {
   chart.draw(chartData, options);
 }
 
+
+
+// notas maiores que a média SCL
+
+// 'SCL' '2016-2' 'number': 1
+var hseScoresSCL10 = [];
+var techScoresSCL10 = [];
+for (i in data['SCL']['2016-2']['students']) {
+  if (data['SCL']['2016-2']['students'][i]['active'] == true) {
+    hseScoresSCL10.push(data['SCL']['2016-2']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresSCL10.push(data['SCL']['2016-2']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresSCL10 = (hseScoresSCL10.reduce((a, b) => a + b)) / hseScoresSCL10.length ;
+var avarageTechScoresSCL10 = (techScoresSCL10.reduce((a, b) => a + b)) / techScoresSCL10.length ;
+var totalHseScoresSCL10 = avarageHseScoresSCL10 + avarageTechScoresSCL10;
+
+// 'SCL' '2016-2' 'number': 2
+var hseScoresSCL11 = [];
+var techScoresSCL11 = [];
+for (i in data['SCL']['2016-2']['students']) {
+  if (data['SCL']['2016-2']['students'][i]['active'] == true) {
+    hseScoresSCL11.push(data['SCL']['2016-2']['students'][i]['sprints'][1]['score']['hse']);
+    techScoresSCL11.push(data['SCL']['2016-2']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresSCL11 = (hseScoresSCL11.reduce((a, b) => a + b)) / hseScoresSCL11.length ;
+var avarageTechScoresSCL11 = (techScoresSCL11.reduce((a, b) => a + b)) / techScoresSCL11.length ;
+var totalHseScoresSCL11 = avarageHseScoresSCL11 + avarageTechScoresSCL11;
+
+// 'SCL' '2016-2' 'number': 3
+var hseScoresSCL12 = [];
+var techScoresSCL12 = [];
+for (i in data['SCL']['2016-2']['students']) {
+  if (data['SCL']['2016-2']['students'][i]['active'] == true) {
+    hseScoresSCL12.push(data['SCL']['2016-2']['students'][i]['sprints'][2]['score']['hse']);
+    techScoresSCL12.push(data['SCL']['2016-2']['students'][i]['sprints'][2]['score']['tech']);}
+}
+var avarageHseScoresSCL12 = (hseScoresSCL12.reduce((a, b) => a + b)) / hseScoresSCL12.length ;
+var avarageTechScoresSCL12 = (techScoresSCL12.reduce((a, b) => a + b)) / techScoresSCL12.length ;
+var totalHseScoresSCL12 = avarageHseScoresSCL12 + avarageTechScoresSCL12;
+
+// 'SCL' '2016-2' 'number': 4
+var hseScoresSCL13 = [];
+var techScoresSCL13 = [];
+for (i in data['SCL']['2016-2']['students']) {
+  if (data['SCL']['2016-2']['students'][i]['active'] == true) {
+    hseScoresSCL13.push(data['SCL']['2016-2']['students'][i]['sprints'][3]['score']['hse']);
+    techScoresSCL13.push(data['SCL']['2016-2']['students'][i]['sprints'][3]['score']['tech']);}
+}
+var avarageHseScoresSCL13 = (hseScoresSCL13.reduce((a, b) => a + b)) / hseScoresSCL13.length ;
+var avarageTechScoresSCL13 = (techScoresSCL13.reduce((a, b) => a + b)) / techScoresSCL13.length ;
+var totalHseScoresSCL13 = avarageHseScoresSCL13 + avarageTechScoresSCL13;
+
+// 'SCL' '2017-1' 'number': 1
+var hseScoresSCL20 = [];
+var techScoresSCL20 = [];
+for (i in data['SCL']['2017-1']['students']) {
+  if (data['SCL']['2017-1']['students'][i]['active'] == true) {
+    hseScoresSCL20.push(data['SCL']['2017-1']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresSCL20.push(data['SCL']['2017-1']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresSCL20 = (hseScoresSCL20.reduce((a, b) => a + b)) / hseScoresSCL20.length ;
+var avarageTechScoresSCL20 = (techScoresSCL20.reduce((a, b) => a + b)) / techScoresSCL20.length ;
+var totalHseScoresSCL20 = avarageHseScoresSCL20 + avarageTechScoresSCL20;
+
+// 'SCL' '2017-1' 'number': 2
+var hseScoresSCL21 = [];
+var techScoresSCL21 = [];
+for (i in data['SCL']['2017-1']['students']) {
+  if (data['SCL']['2017-1']['students'][i]['active'] == true) {
+    hseScoresSCL21.push(data['SCL']['2017-1']['students'][i]['sprints'][1]['score']['hse']);
+    techScoresSCL21.push(data['SCL']['2017-1']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresSCL21 = (hseScoresSCL21.reduce((a, b) => a + b)) / hseScoresSCL21.length ;
+var avarageTechScoresSCL21 = (techScoresSCL21.reduce((a, b) => a + b)) / techScoresSCL21.length ;
+var totalHseScoresSCL21 = avarageHseScoresSCL21 + avarageTechScoresSCL21;
+
+// 'SCL' '2017-1' 'number': 3
+var hseScoresSCL22 = [];
+var techScoresSCL22 = [];
+for (i in data['SCL']['2017-1']['students']) {
+  if (data['SCL']['2017-1']['students'][i]['active'] == true) {
+    hseScoresSCL22.push(data['SCL']['2017-1']['students'][i]['sprints'][2]['score']['hse']);
+    techScoresSCL22.push(data['SCL']['2017-1']['students'][i]['sprints'][2]['score']['tech']);}
+}
+var avarageHseScoresSCL22 = (hseScoresSCL22.reduce((a, b) => a + b)) / hseScoresSCL22.length ;
+var avarageTechScoresSCL22 = (techScoresSCL22.reduce((a, b) => a + b)) / techScoresSCL22.length ;
+var totalHseScoresSCL22 = avarageHseScoresSCL22 + avarageTechScoresSCL22;
+
+// 'SCL' '2017-2' 'number': 1
+var hseScoresSCL30 = [];
+var techScoresSCL30 = [];
+for (i in data['SCL']['2017-2']['students']) {
+  if (data['SCL']['2017-2']['students'][i]['active'] == true) {
+    hseScoresSCL30.push(data['SCL']['2017-2']['students'][i]['sprints'][0]['score']['hse']);
+    techScoresSCL30.push(data['SCL']['2017-2']['students'][i]['sprints'][0]['score']['tech']);}
+}
+var avarageHseScoresSCL30 = (hseScoresSCL30.reduce((a, b) => a + b)) / hseScoresSCL30.length ;
+var avarageTechScoresSCL30 = (techScoresSCL30.reduce((a, b) => a + b)) / techScoresSCL30.length ;
+var totalHseScoresSCL30 = avarageHseScoresSCL30 + avarageTechScoresSCL30;
+
+// 'SCL' '2017-2' 'number': 2
+var hseScoresSCL31 = [];
+var techScoresSCL31 = [];
+for (i in data['SCL']['2017-2']['students']) {
+  if (data['SCL']['2017-2']['students'][i]['active'] == true) {
+    hseScoresSCL31.push(data['SCL']['2017-2']['students'][i]['sprints'][1]['score']['hse']);
+    techScoresSCL31.push(data['SCL']['2017-2']['students'][i]['sprints'][1]['score']['tech']);}
+}
+var avarageHseScoresSCL31 = (hseScoresSCL31.reduce((a, b) => a + b)) / hseScoresSCL31.length ;
+var avarageTechScoresSCL31 = (techScoresSCL31.reduce((a, b) => a + b)) / techScoresSCL31.length ;
+var totalHseScoresSCL31 = avarageHseScoresSCL31 + avarageTechScoresSCL31;
+
+
+// gráfico notas maiores que a média SCL
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartGradesSCL);
+
+function curveChartGradesSCL() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Sprint', 'Notas HSE', 'Notas Tech', 'Notas Totais'],
+    ['Turma 2016-2, sprint 1',avarageHseScoresSCL10,avarageTechScoresSCL10, totalHseScoresSCL10],
+    ['Turma 2016-2, sprint 2',avarageHseScoresSCL11,avarageTechScoresSCL11, totalHseScoresSCL11],
+    ['Turma 2016-2, sprint 3',avarageHseScoresSCL12,avarageTechScoresSCL12, totalHseScoresSCL12],
+    ['Turma 2016-2, sprint 4',avarageHseScoresSCL13,avarageTechScoresSCL13, totalHseScoresSCL13],
+    ['Turma 2017-1, sprint 1',avarageHseScoresSCL20,avarageTechScoresSCL20, totalHseScoresSCL20],
+    ['Turma 2017-1, sprint 2',avarageHseScoresSCL21,avarageTechScoresSCL21, totalHseScoresSCL21],
+    ['Turma 2017-1, sprint 3',avarageHseScoresSCL22,avarageTechScoresSCL22, totalHseScoresSCL22],
+    ['Turma 2017-2, sprint 1',avarageHseScoresSCL30,avarageTechScoresSCL30, totalHseScoresSCL30],
+    ['Turma 2017-2, sprint 2',avarageHseScoresSCL31,avarageTechScoresSCL31, totalHseScoresSCL31]
+  ]);
+
+  var options = {
+    title: 'Média de notas em Santiago',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesSCL'));
+
+  chart.draw(chartData, options);
+}
+
+
+
+
+
 // O percentual de alunas satisfeitas com a experiência da Laboratória de SCL 2016-2
 var noCumpleSCL1 = [] ;
 var cumpleSCL1 = [] ;
@@ -499,6 +863,36 @@ function donutchartActiveLAB() {
   chart.draw(chartData, options);
 }
 
+
+// notas maiores que a média LAB
+var totalHseScoresAQP = (totalHseScoresAQP10 + totalHseScoresAQP11 + totalHseScoresAQP12 + totalHseScoresAQP13 + totalHseScoresAQP20 + totalHseScoresAQP21 + totalHseScoresAQP22) / 7;
+var totalHseScoresCDMX = (totalHseScoresCDMX10 + totalHseScoresCDMX11 + totalHseScoresCDMX12 + totalHseScoresCDMX20 + totalHseScoresCDMX21) / 5;
+var totalHseScoresLIM = (totalHseScoresLIM10 + totalHseScoresLIM11 + totalHseScoresLIM20 + totalHseScoresLIM21 + totalHseScoresLIM22 + totalHseScoresLIM23 + totalHseScoresLIM30 + totalHseScoresLIM31) / 8;
+var totalHseScoresSCL = (totalHseScoresSCL10 + totalHseScoresSCL11 + totalHseScoresSCL12 + totalHseScoresSCL13 + totalHseScoresSCL20 + totalHseScoresSCL21 + totalHseScoresSCL22 + totalHseScoresSCL30 + totalHseScoresSCL31) / 9;
+
+// gráfico notas maiores que a média LAB
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartGradesLAB);
+
+function curveChartGradesLAB() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Sede', 'Média das Notas'],
+    ['Arequipa',totalHseScoresAQP],
+    ['Cidade do México',totalHseScoresCDMX],
+    ['Lima',totalHseScoresLIM],
+    ['Santiago',totalHseScoresSCL]
+  ]);
+
+  var options = {
+    title: 'Média de notas na Laboratória',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesLAB'));
+
+  chart.draw(chartData, options);
+}
 
 
 //-------------NPS POR TURMA SCL 2017-2------------//
