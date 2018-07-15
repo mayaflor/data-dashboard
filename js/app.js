@@ -893,9 +893,369 @@ function curveChartGradesLAB() {
 
   chart.draw(chartData, options);
 }
+/*---------------NPS---------------------------*/
+/*-------------NPS POR TURMA AQP 2016-2------------*/
+var promotorasAQP20162 = 0;
+var pasivasAQP20162 = 0;
+var detractorasAQP20162 = 0;
+for ( turma in data['AQP'])
+for (i in data['AQP']['2016-2']['ratings']){
+ promotorasAQP20162 += data['AQP']['2016-2']['ratings'][i]['nps']['promoters'];
+ pasivasAQP20162 += data['AQP']['2016-2']['ratings'][i]['nps']['passive'];
+ detractorasAQP20162 += data['AQP']['2016-2']['ratings'][i]['nps']['detractors'];
+var total = promotorasAQP20162 + pasivasAQP20162 + detractorasAQP20162;
+var promoters = (promotorasAQP20162 / total) *100;
+var passive = (pasivasAQP20162 / total)*100;
+var detractors = (detractorasAQP20162 / total) *100;
+var nps = promoters - detractors; 
+}
 
 
-//-------------NPS POR TURMA SCL 2017-2------------//
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChartNPSAQP20162);
+function drawChartNPSAQP20162() {
+var data = google.visualization.arrayToDataTable([
+['', ''],
+['Indicariam',promotorasAQP20162],
+['Neutras', pasivasAQP20162],
+['Não indicariam', detractorasAQP20162],
+
+]);
+
+var options = {
+title: 'NPS: AQP-2016-2',
+pieHole: 0.4,
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchartAQP20162'));
+chart.draw(data, options);
+}
+/*-------------NPS POR TURMA AQP 2017-1------------*/
+ 
+var promotorasAQP20171 = 0;
+var pasivasAQP20171 = 0;
+var detractorasAQP20171= 0;
+for ( turma in data['AQP'])
+for (i in data['AQP']['2017-1']['ratings']){
+ promotorasAQP20171 += data['AQP']['2017-1']['ratings'][i]['nps']['promoters'];
+ pasivasAQP20171 += data['AQP']['2017-1']['ratings'][i]['nps']['passive'];
+ detractorasAQP20171+= data['AQP']['2017-1']['ratings'][i]['nps']['detractors'];
+var total = promotorasAQP20171 + pasivasAQP20171 + detractorasAQP20171
+var promoters = (promotorasAQP20171 / total) *100;
+var passive = (pasivasAQP20171 / total)*100;
+var detractors = (detractorasAQP20171/ total) *100;
+var nps = promoters - detractors; 
+}
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChartNPSAQP20171);
+function drawChartNPSAQP20171() {
+var data = google.visualization.arrayToDataTable([
+['', ''],
+['Indicariam',promotorasAQP20171],
+['Neutras', pasivasAQP20171],
+['Não indicariam', detractorasAQP20171],
+
+]);
+
+var options = {
+title: 'NPS: AQP-2016-2',
+pieHole: 0.4,
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchartAQP20171'));
+chart.draw(data, options);
+}
+//-FIM DO NPS AQP-//
+
+
+/**NPS CDMX */
+ /**NPS CDMX 2017-1 */
+ var promotorasCDMX20171 = 0;
+ var pasivasCDMX20171 = 0;
+ var detractorasCDMX20171 = 0;
+ for ( turma in data['CDMX'])
+ for (i in data['CDMX']['2017-1']['ratings']){
+  promotorasCDMX20171 += data['CDMX']['2017-1']['ratings'][i]['nps']['promoters'];
+  pasivasCDMX20171 += data['CDMX']['2017-1']['ratings'][i]['nps']['passive'];
+  detractorasCDMX20171 += data['CDMX']['2017-1']['ratings'][i]['nps']['detractors'];
+ var total = promotorasCDMX20171 + pasivasCDMX20171 + detractorasCDMX20171;
+ var promoters = (promotorasCDMX20171 / total) *100;
+ var passive = (pasivasCDMX20171 / total)*100;
+ var detractors = (detractorasCDMX20171 / total) *100;
+ var nps = promoters - detractors; 
+ }
+ 
+ 
+ 
+ 
+ //-----GRAFICO NPS CDMX ------// 
+ google.charts.load("current", {packages:["corechart"]});
+ google.charts.setOnLoadCallback(drawChartNPSCDMX20171);
+ function drawChartNPSCDMX20171() {
+ var data = google.visualization.arrayToDataTable([
+ ['', ''],
+ ['Indicariam',promotorasCDMX20171],
+ ['Neutras', pasivasCDMX20171],
+ ['Não indicariam', detractorasCDMX20171],
+ 
+ ]);
+ 
+ var options = {
+ title: 'NPS: CDMX-2017-1',
+ pieHole: 0.4,
+ };
+ 
+ var chart = new google.visualization.PieChart(document.getElementById('donutchartCDMX20171'));
+ chart.draw(data, options);
+ }
+/**FIM CDMX 2017-1 */
+
+ /*NPS CDMX 2017-2*/
+
+ var promotorasCDMX20172 = 0;
+ var pasivasCDMX20172 = 0;
+ var detractorasCDMX20172 = 0;
+ for ( turma in data['CDMX'])
+ for (i in data['CDMX']['2017-2']['ratings']){
+  promotorasCDMX20172 += data['CDMX']['2017-2']['ratings'][i]['nps']['promoters'];
+  pasivasCDMX20172 += data['CDMX']['2017-2']['ratings'][i]['nps']['passive'];
+  detractorasCDMX20172 += data['CDMX']['2017-2']['ratings'][i]['nps']['detractors'];
+ var total = promotorasCDMX20172 + pasivasCDMX20172 + detractorasCDMX20172;
+ var promoters = (promotorasCDMX20172 / total) *100;
+ var passive = (pasivasCDMX20172 / total)*100;
+ var detractors = (detractorasCDMX20172 / total) *100;
+ var nps = promoters - detractors; 
+ }
+ 
+ 
+ 
+ 
+ //-----GRAFICO NPS CDMX ------// 
+ google.charts.load("current", {packages:["corechart"]});
+ google.charts.setOnLoadCallback(drawChartNPSCDMX20172);
+ function drawChartNPSCDMX20172() {
+ var data = google.visualization.arrayToDataTable([
+ ['', ''],
+ ['Indicariam',promotorasCDMX20172],
+ ['Neutras', pasivasCDMX20172],
+ ['Não indicariam', detractorasCDMX20172],
+ 
+ ]);
+ 
+ var options = {
+ title: 'NPS: CDMX-2017-2',
+ pieHole: 0.4,
+ };
+ 
+ var chart = new google.visualization.PieChart(document.getElementById('donutchartCDMX20172'));
+ chart.draw(data, options);
+ }
+ /*******************************************NPS LIMA ********** */
+ /*******************************************NPS LIMA 2016-2********** */
+ var promotorasLIM20161 = 0;
+ var pasivasLIM20161 = 0;
+ var detractorasLIM20161 = 0;
+ for ( turma in data['LIM'])
+ for (i in data['LIM']['2016-2']['ratings']){
+  promotorasLIM20161 += data['LIM']['2016-2']['ratings'][i]['nps']['promoters'];
+  pasivasLIM20161 += data['LIM']['2016-2']['ratings'][i]['nps']['passive'];
+  detractorasLIM20161 += data['LIM']['2016-2']['ratings'][i]['nps']['detractors'];
+ var total = promotorasLIM20161 + pasivasLIM20161 + detractorasLIM20161;
+ var promoters = (promotorasLIM20161 / total) *100;
+ var passive = (pasivasLIM20161 / total)*100;
+ var detractors = (detractorasLIM20161 / total) *100;
+ var nps = promoters - detractors; 
+ }
+ 
+ 
+ 
+ 
+ //-----GRAFICO NPS LIM 2016-2 ------// 
+ google.charts.load("current", {packages:["corechart"]});
+ google.charts.setOnLoadCallback(drawChartNPSLIM20162);
+ function drawChartNPSLIM20162() {
+ var data = google.visualization.arrayToDataTable([
+ ['', ''],
+ ['Indicariam',promotorasLIM20161],
+ ['Neutras', pasivasLIM20161],
+ ['Não indicariam', detractorasLIM20161],
+ 
+ ]);
+ 
+ var options = {
+ title: 'NPS: LIM-2016-2',
+ pieHole: 0.4,
+ };
+ 
+ var chart = new google.visualization.PieChart(document.getElementById('donutchartLIM20162'));
+ chart.draw(data, options);
+ }
+  
+ /*******************************************NPS LIMA 2017-2********** */
+ var promotorasLIM20172 = 0;
+var pasivasLIM20172 = 0;
+var detractorasLIM20172 = 0;
+for ( turma in data['LIM'])
+for (i in data['LIM']['2017-2']['ratings']){
+ promotorasLIM20172 += data['LIM']['2017-2']['ratings'][i]['nps']['promoters'];
+ pasivasLIM20172 += data['LIM']['2017-2']['ratings'][i]['nps']['passive'];
+ detractorasLIM20172 += data['LIM']['2017-2']['ratings'][i]['nps']['detractors'];
+var total = promotorasLIM20172 + pasivasLIM20172 + detractorasLIM20172;
+var promoters = (promotorasLIM20172 / total) *100;
+var passive = (pasivasLIM20172 / total)*100;
+var detractors = (detractorasLIM20172 / total) *100;
+var nps = promoters - detractors; 
+}
+
+
+
+
+//-----GRAFICO NPS LIM -2017-2-----// 
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChartNPSLIM20172);
+function drawChartNPSLIM20172() {
+var data = google.visualization.arrayToDataTable([
+['', ''],
+['Indicariam',promotorasLIM20172],
+['Neutras', pasivasLIM20172],
+['Não indicariam', detractorasLIM20172],
+
+]);
+
+var options = {
+title: 'NPS: LIM-2017-2',
+pieHole: 0.4,
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchartLIM20172'));
+chart.draw(data, options);
+} 
+
+ /*******************************************NPS LIMA 2017-1********** */
+  
+ 
+ 
+ var promotorasLIM20171 = 0;
+ var pasivasLIM20171 = 0;
+ var detractorasLIM20171 = 0;
+ for ( turma in data['LIM'])
+ for (i in data['LIM']['2017-1']['ratings']){
+  promotorasLIM20171 += data['LIM']['2017-1']['ratings'][i]['nps']['promoters'];
+  pasivasLIM20171 += data['LIM']['2017-1']['ratings'][i]['nps']['passive'];
+  detractorasLIM20171 += data['LIM']['2017-1']['ratings'][i]['nps']['detractors'];
+ var total = promotorasLIM20171 + pasivasLIM20171 + detractorasLIM20171;
+ var promoters = (promotorasLIM20171 / total) *100;
+ var passive = (pasivasLIM20171 / total)*100;
+ var detractors = (detractorasLIM20171 / total) *100;
+ var nps = promoters - detractors; 
+ }
+ 
+ 
+ 
+ 
+ //-----GRAFICO NPS LIM ------// 
+ google.charts.load("current", {packages:["corechart"]});
+ google.charts.setOnLoadCallback(drawChartNPSLIM20171);
+ function drawChartNPSLIM20171() {
+ var data = google.visualization.arrayToDataTable([
+ ['', ''],
+ ['Indicariam',promotorasLIM20171],
+ ['Neutras', pasivasLIM20171],
+ ['Não indicariam ', detractorasLIM20171],
+ 
+ ]);
+ 
+ var options = {
+ title: 'NPS: LIM-2017-1',
+ pieHole: 0.4,
+ };
+ 
+ var chart = new google.visualization.PieChart(document.getElementById('donutchartLIM20171'));
+ chart.draw(data, options);
+ } 
+   
+  //-------------NPS SCL------------//
+  //--------------------NPS SCL 2016-2--------------------//
+   
+  var promotoras20162 = 0;
+  var pasivas20162 = 0;
+  var detractoras20162 = 0;
+  for ( turma in data['SCL'])
+  for (i in data['SCL']['2016-2']['ratings']){
+   promotoras20162 += data['SCL']['2016-2']['ratings'][i]['nps']['promoters'];
+   pasivas20162 += data['SCL']['2016-2']['ratings'][i]['nps']['passive'];
+   detractoras20162 += data['SCL']['2016-2']['ratings'][i]['nps']['detractors'];
+  var total = promotoras20162 + pasivas20162 + detractoras20162;
+  var promoters = (promotoras20162 / total) *100;
+  var passive = (pasivas20162 / total)*100;
+  var detractors = (detractoras20162 / total) *100;
+  var nps = promoters - detractors; 
+  }
+  
+  
+  
+  
+  //-----GRAFICO NPS SCL-2016-2 ------// 
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChartNPSSCL20162);
+  function drawChartNPSSCL20162() {
+  var data = google.visualization.arrayToDataTable([
+  ['', ''],
+  ['Indicariam',promotoras20162],
+  ['Neutras', pasivas20162],
+  ['Não indicariam ', detractoras20162],
+  
+  ]);
+  
+  var options = {
+  title: 'NPS: SCL-2016-2',
+  pieHole: 0.4,
+  };
+  
+  var chart = new google.visualization.PieChart(document.getElementById('donutchartNPSSCL20162'));
+  chart.draw(data, options);
+  }
+  
+  //-------------NPS POR TURMA SCL 2017-1------------//
+  var promotoras20171 = 0;
+var pasivas20171 = 0;
+var detractoras20171 = 0;
+for ( turma in data['SCL'])
+for (i in data['SCL']['2017-1']['ratings']){
+ promotoras20171 += data['SCL']['2017-1']['ratings'][i]['nps']['promoters'];
+ pasivas20171 += data['SCL']['2017-1']['ratings'][i]['nps']['passive'];
+ detractoras20171 += data['SCL']['2017-1']['ratings'][i]['nps']['detractors'];
+var total = promotoras20171 + pasivas20171 + detractoras20171;
+var promoters = (promotoras20171 / total) *100;
+var passive = (pasivas20171 / total)*100;
+var detractors = (detractoras20171 / total) *100;
+var nps = promoters - detractors; 
+}
+
+
+
+
+//-----GRAFICO NPS SCL-2017-1 ------// 
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChartNPS20171);
+function drawChartNPS20171() {
+var data = google.visualization.arrayToDataTable([
+['', ''],
+['Indicariam',promotoras20171],
+['Neutras', pasivas20171],
+['Não indicariam ', detractoras20171],
+
+]);
+
+var options = {
+title: 'NPS: SCL-2017-1',
+pieHole: 0.4,
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchartNPS20171'));
+chart.draw(data, options);
+}
+  //-------------NPS POR TURMA SCL 2017-2------------//
 
 var promotoras = 0;
 var pasivas = 0;
@@ -909,9 +1269,11 @@ var total = promotoras + pasivas + detractoras;
 var promoters = (promotoras / total) *100;
 var passive = (pasivas / total)*100;
 var detractors = (detractoras / total) *100;
-var nps = promoters - detractors;
- 
+var nps = promoters - detractors; 
 }
+
+
+
 
 //-----GRAFICO NPS SCL ------// 
 google.charts.load("current", {packages:["corechart"]});
@@ -919,9 +1281,9 @@ google.charts.setOnLoadCallback(drawChartNPS);
 function drawChartNPS() {
 var data = google.visualization.arrayToDataTable([
 ['', ''],
-['promotoras',promotoras],
-['pasivas', pasivas],
-['detractoras', detractoras],
+['Indicariam',promotoras],
+['Neutras', pasivas],
+['Não indicariam ', detractoras],
 
 ]);
 
@@ -933,9 +1295,155 @@ pieHole: 0.4,
 var chart = new google.visualization.PieChart(document.getElementById('donutchartNPS'));
 chart.draw(data, options);
 }
+/*FIM DO NPS */
+/*-------------------------------MÉDIA JEDI-------------------------------------------*/
+/* ------------AQP-------------------*/
+var averegeJediAQP20162 = 0;
+var maxNoteJediAQP20162 = 5;
+var sprintNoteAQP20162 = 0;
+for (sprint in data['AQP']['2016-2']['ratings']){
+ sprintNoteAQP20162 +=  data['AQP']['2016-2']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprintAQP20162 = sprintNumber +1;
+averegeJediAQP20162 = sprintNoteAQP20162 / numeroTotalDeSprintAQP20162 ;
+}
+/*---------------------------Média Jedi por Turma - AQP -2017-2*/
+var averegeJediAQP20171 = 0;
+var maxNoteJediAQP20171 = 5;
+var sprintNoteAQP20171 = 0;
+for (sprint in data['AQP']['2017-1']['ratings']){
+ sprintNoteAQP20171 +=  data['AQP']['2017-1']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeJediAQP20171 = sprintNoteAQP20171 / numeroTotalDeSprint ;
+}
+ 
+ 
 
+/*---------gráfico linhas média jedi sede AQP --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeJediAQP);
 
-/*---------------------------Média Jedi por Turma - SLC -2017-2*/
+function drawChartAveregeJediAQP() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média Jedi'],
+    ['2016-2', averegeJediAQP20162],
+    ['2017-1',averegeJediAQP20171 ],
+   
+   
+    
+  ]);
+
+  var options = {
+    title: 'Média nota do Jedi AQP',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediAQP'));
+
+  chart.draw(data, options);
+  
+}
+/**-------------------jedi CDMX ----------------------------*/
+var averegeJediCDMX20171 = 0;
+var maxNoteJediCDMX20171 = 5;
+var sprintNoteCDMX20171 = 0;
+for (sprint in data['CDMX']['2017-1']['ratings']){
+ sprintNoteCDMX20171 +=  data['CDMX']['2017-1']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint20171 = sprintNumber +1;
+averegeJediCDMX20171 = sprintNoteCDMX20171 / numeroTotalDeSprint20171 ;
+}
+/*---------------------------Média Jedi por Turma - CDMX -20172*/
+var averegeJediCDMX20172 = 0;
+var maxNoteJediCDMX20172 = 5;
+var sprintNoteCDMX20172 = 0;
+for (sprint in data['CDMX']['2017-2']['ratings']){
+ sprintNoteCDMX20172 +=  data['CDMX']['2017-2']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeJediCDMX20172 = sprintNoteCDMX20172 / numeroTotalDeSprint ;
+}
+ 
+ 
+
+/*---------gráfico linhas média jedi sede CDMX --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeJediCDMX);
+
+function drawChartAveregeJediCDMX() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média Jedi'],
+    ['2016-2',averegeJediCDMX20171],
+    ['2017-1',averegeJediCDMX20172],
+  ]);
+
+  var options = {
+    title: 'Média nota do Jedi CDMX',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediCDMX'));
+
+  chart.draw(data, options);
+ }
+/*MEDIA JEDI LIM
+/*---------------------------Média Jedi por Turma - LIM -20162*/
+var averegeJediLIM20162 = 0;
+var maxNoteJediLIM20162 = 5;
+var sprintNoteLIM20162 = 0;
+for (sprint in data['LIM']['2016-2']['ratings']){
+ sprintNoteLIM20162 +=  data['LIM']['2016-2']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint20171 = sprintNumber +1;
+averegeJediLIM20162 = sprintNoteLIM20162 / numeroTotalDeSprint20171 ;
+}
+/*---------------------------Média Jedi por Turma - LIM -20171*/
+var averegeJediLIM20171 = 0;
+var maxNoteJediLIM20171 = 5;
+var sprintNoteLIM20171 = 0;
+for (sprint in data['LIM']['2017-1']['ratings']){
+ sprintNoteLIM20171 +=  data['LIM']['2017-1']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeJediLIM20171 = sprintNoteLIM20171 / numeroTotalDeSprint ;
+}
+ 
+ /*---------------------------Média Jedi por Turma - LIM -20172*/
+ var averegeJediLIM20172 = 0;
+ var maxNoteJediLIM20172 = 5;
+ var sprintNoteLIM20172 = 0;
+ for (sprint in data['LIM']['2017-2']['ratings']){
+  sprintNoteLIM20172 +=  data['LIM']['2017-2']['ratings'][sprint]['jedi'];
+  var sprintNumber = parseInt(sprint);
+ var numeroTotalDeSprint = sprintNumber  +1;
+ averegeJediLIM20172 = sprintNoteLIM20172 / numeroTotalDeSprint ;
+ }
+/*---------gráfico linhas média jedi sede LIM --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeJediLIM);
+
+function drawChartAveregeJediLIM() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média Jedi'],
+    ['2016-2',averegeJediLIM20162],
+    ['2017-1',averegeJediLIM20171],
+    ['2017-2',averegeJediLIM20172], 
+  ]);
+
+  var options = {
+    title: 'Média nota do Jedi LIM',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediLIM'));
+
+  chart.draw(data, options);
+ }
+/*---------------------------Média Jedi por Turma - SLC -2016-2*/
 var averegeJedi20162 = 0;
 var maxNoteJedi = 5;
 var sprintNote = 0;
@@ -945,6 +1453,7 @@ for (sprint in data['SCL']['2016-2']['ratings']){
 var numeroTotalDeSprint = sprintNumber  +1;
 averegeJedi20162 = sprintNote / numeroTotalDeSprint ;
 }
+/*---------------------------Média Jedi por Turma - SLC -2017-2*/
 var averegeJedi20172 = 0;
 var maxNoteJedi = 5;
 var sprintNote = 0;
@@ -955,7 +1464,7 @@ var numeroTotalDeSprint = sprintNumber  +1;
 averegeJedi20172 = sprintNote / numeroTotalDeSprint ;
 }
  
-/**---------------------- Média Jedi por Turma - SLC -2017-1*/
+/**---------------------- Média Jedi Por Turma - SLC -2017-1*/
 
 var averegeJedi20171 = 0;
 var maxNoteJedi = 5;
@@ -1021,7 +1530,217 @@ function drawChartAveregeJediSCL() {
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
 
+
+      /*MÉDIA MENTORES */
+      /* MEDIA MENTORES AQP*/
+      var averegeteacherAQP20162 = 0;
+var maxNoteteacherAQP20162 = 5;
+var sprintNoteAQP20162 = 0;
+for (sprint in data['AQP']['2016-2']['ratings']){
+ sprintNoteAQP20162 +=  data['AQP']['2016-2']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprintAQP20162 = sprintNumber +1;
+averegeteacherAQP20162 = sprintNoteAQP20162 / numeroTotalDeSprintAQP20162 ;
+}
+/*---------------------------Média teacher por Turma - AQP -2017-2*/
+var averegeteacherAQP20171 = 0;
+var maxNoteteacherAQP20171 = 5;
+var sprintNoteAQP20171 = 0;
+for (sprint in data['AQP']['2017-1']['ratings']){
+ sprintNoteAQP20171 +=  data['AQP']['2017-1']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeteacherAQP20171 = sprintNoteAQP20171 / numeroTotalDeSprint ;
+}
+ 
+ 
+
+/*---------gráfico linhas média teacher sede AQP --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeteacherAQP);
+
+function drawChartAveregeteacherAQP() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média teacher'],
+    ['2016-2', averegeteacherAQP20162],
+    ['2017-1',averegeteacherAQP20171 ],
+   
+   
+    
+  ]);
+
+  var options = {
+    title: 'Média nota do teacher AQP',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherAQP'));
+
+  chart.draw(data, options);
+  
+}
+/**-------------------teacher CDMX ----------------------------*/
+var averegeteacherCDMX20171 = 0;
+var maxNoteteacherCDMX20171 = 5;
+var sprintNoteCDMX20171 = 0;
+for (sprint in data['CDMX']['2017-1']['ratings']){
+ sprintNoteCDMX20171 +=  data['CDMX']['2017-1']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint20171 = sprintNumber +1;
+averegeteacherCDMX20171 = sprintNoteCDMX20171 / numeroTotalDeSprint20171 ;
+}
+/*---------------------------Média teacher por Turma - CDMX -20172*/
+var averegeteacherCDMX20172 = 0;
+var maxNoteteacherCDMX20172 = 5;
+var sprintNoteCDMX20172 = 0;
+for (sprint in data['CDMX']['2017-2']['ratings']){
+ sprintNoteCDMX20172 +=  data['CDMX']['2017-2']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeteacherCDMX20172 = sprintNoteCDMX20172 / numeroTotalDeSprint ;
+}
+ 
+ 
+
+/*---------gráfico linhas média teacher sede CDMX --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeteacherCDMX);
+
+function drawChartAveregeteacherCDMX() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média teacher'],
+    ['2016-2',averegeteacherCDMX20171],
+    ['2017-1',averegeteacherCDMX20172],
+  ]);
+
+  var options = {
+    title: 'Média nota do teacher CDMX',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherCDMX'));
+
+  chart.draw(data, options);
+ }
+/*MEDIA teacher LIM
+/*---------------------------Média teacher por Turma - LIM -20162*/
+var averegeteacherLIM20162 = 0;
+var maxNoteteacherLIM20162 = 5;
+var sprintNoteLIM20162 = 0;
+for (sprint in data['LIM']['2016-2']['ratings']){
+ sprintNoteLIM20162 +=  data['LIM']['2016-2']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint20171 = sprintNumber +1;
+averegeteacherLIM20162 = sprintNoteLIM20162 / numeroTotalDeSprint20171 ;
+}
+/*---------------------------Média teacher por Turma - LIM -20171*/
+var averegeteacherLIM20171 = 0;
+var maxNoteteacherLIM20171 = 5;
+var sprintNoteLIM20171 = 0;
+for (sprint in data['LIM']['2017-1']['ratings']){
+ sprintNoteLIM20171 +=  data['LIM']['2017-1']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeteacherLIM20171 = sprintNoteLIM20171 / numeroTotalDeSprint ;
+}
+ 
+ /*---------------------------Média teacher por Turma - LIM -20172*/
+ var averegeteacherLIM20172 = 0;
+ var maxNoteteacherLIM20172 = 5;
+ var sprintNoteLIM20172 = 0;
+ for (sprint in data['LIM']['2017-2']['ratings']){
+  sprintNoteLIM20172 +=  data['LIM']['2017-2']['ratings'][sprint]['teacher'];
+  var sprintNumber = parseInt(sprint);
+ var numeroTotalDeSprint = sprintNumber  +1;
+ averegeteacherLIM20172 = sprintNoteLIM20172 / numeroTotalDeSprint ;
+ }
+/*---------gráfico linhas média teacher sede LIM --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeteacherLIM);
+
+function drawChartAveregeteacherLIM() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média teacher'],
+    ['2016-2',averegeteacherLIM20162],
+    ['2017-1',averegeteacherLIM20171],
+    ['2017-2',averegeteacherLIM20172], 
+  ]);
+
+  var options = {
+    title: 'Média nota do teacher LIM',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherLIM'));
+
+  chart.draw(data, options);
+ }
+/*---------------------------Média teacher por Turma - SLC -2016-2*/
+var averegeteacher20162 = 0;
+var maxNoteteacher = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2016-2']['ratings']){
+ sprintNote +=  data['SCL']['2016-2']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeteacher20162 = sprintNote / numeroTotalDeSprint ;
+}
+/*---------------------------Média teacher por Turma - SLC -2017-2*/
+var averegeteacher20172 = 0;
+var maxNoteteacher = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2017-2']['ratings']){
+ sprintNote +=  data['SCL']['2017-2']['ratings'][sprint]['teacher'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeteacher20172 = sprintNote / numeroTotalDeSprint ;
+}
+ 
+/**---------------------- Média teacher Por Turma - SLC -2017-1*/
+
+var averegeteacher20171 = 0;
+var maxNoteteacher = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2017-1']['ratings']){
+ sprintNote +=  data['SCL']['2017-1']['ratings'][sprint]['teacher']; 
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeteacher20171 = sprintNote / numeroTotalDeSprint ;
+}
+
+
+/*---------gráfico linhas média teacher sede scl --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeteacherSCL);
+
+function drawChartAveregeteacherSCL() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média teacher'],
+    ['2016-2', averegeteacher20162],
+    ['2017-1',averegeteacher20171 ],
+    ['2017-2', averegeteacher20172 ],
+   
+    
+  ]);
+
+  var options = {
+    title: 'Média nota do teacher SCL',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherSCL'));
+
+  chart.draw(data, options);
+ 
+  
+}
+
       /**-------------MÉDIA MENTORES POR SCL */
+    
  
         /**---SCL-2016-2 */
 
