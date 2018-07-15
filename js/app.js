@@ -283,8 +283,9 @@ var promoters = (promotoras / total) *100;
 var passive = (pasivas / total)*100;
 var detractors = (detractoras / total) *100;
 var nps = promoters - detractors;
-
+ 
 }
+
 //-----GRAFICO NPS SCL ------// 
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChartNPS);
@@ -304,4 +305,151 @@ pieHole: 0.4,
 
 var chart = new google.visualization.PieChart(document.getElementById('donutchartNPS'));
 chart.draw(data, options);
+}
+
+
+/*---------------------------Média Jedi por Turma - SLC -2017-2*/
+var averegeJedi20162 = 0;
+var maxNoteJedi = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2016-2']['ratings']){
+ sprintNote +=  data['SCL']['2016-2']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeJedi20162 = sprintNote / numeroTotalDeSprint ;
+}
+var averegeJedi20172 = 0;
+var maxNoteJedi = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2017-2']['ratings']){
+ sprintNote +=  data['SCL']['2017-2']['ratings'][sprint]['jedi'];
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeJedi20172 = sprintNote / numeroTotalDeSprint ;
+}
+ 
+/**---------------------- Média Jedi por Turma - SLC -2017-1*/
+
+var averegeJedi20171 = 0;
+var maxNoteJedi = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2017-1']['ratings']){
+ sprintNote +=  data['SCL']['2017-1']['ratings'][sprint]['jedi']; 
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeJedi20171 = sprintNote / numeroTotalDeSprint ;
+}
+
+
+/*---------gráfico linhas média jedi sede scl --------------------*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChartAveregeJediSCL);
+
+function drawChartAveregeJediSCL() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média Jedi'],
+    ['2016-2', averegeJedi20162],
+    ['2017-1',averegeJedi20171 ],
+    ['2017-2', averegeJedi20172 ],
+   
+    
+  ]);
+
+  var options = {
+    title: 'Média nota do Jedi SCL',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediSCL'));
+
+  chart.draw(data, options);
+ 
+  
+}
+ /*----fim do grafico linhas média jedi sede scl*/
+
+ /*--grafico em barras*/
+ google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChartAveregeJediSCLBarras);
+
+      function drawChartAveregeJediSCLBarras() {
+        var data = google.visualization.arrayToDataTable([
+          ['Turma', 'Média Jedi'],
+          ['2016-2', averegeJedi20162],
+          ['2017-1',averegeJedi20171 ],
+          ['2017-2', averegeJedi20172 ],
+         
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Média Jedi Sede - SCL',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barraAveregeJediSCL'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+
+      /**-------------MÉDIA MENTORES POR SCL */
+ 
+        /**---SCL-2016-2 */
+
+        var averegeTecher20162 = 0;
+        var maxNoteTecher = 5;
+        var sprintNote = 0;
+        for (sprint in data['SCL']['2016-2']['ratings']){
+         sprintNote +=  data['SCL']['2016-2']['ratings'][sprint]['teacher']; 
+         var sprintNumber = parseInt(sprint);
+        var numeroTotalDeSprint = sprintNumber  +1;
+        averegeTecher20162 = sprintNote / numeroTotalDeSprint ;
+        }
+
+  /**---SCL-2017-1 */
+  var averegeTecher20171 = 0;
+var maxNoteTecher = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2017-1']['ratings']){
+ sprintNote +=  data['SCL']['2017-1']['ratings'][sprint]['teacher']; 
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeTecher20171 = sprintNote / numeroTotalDeSprint ;
+}
+
+  /**SCL-2017-2 */
+var averegeTecher20172 = 0;
+var maxNoteTecher = 5;
+var sprintNote = 0;
+for (sprint in data['SCL']['2017-2']['ratings']){
+ sprintNote +=  data['SCL']['2017-2']['ratings'][sprint]['teacher']; 
+ var sprintNumber = parseInt(sprint);
+var numeroTotalDeSprint = sprintNumber  +1;
+averegeTecher20172 = sprintNote / numeroTotalDeSprint ;
+}
+/**GRÁFICO EM BARRAS MÉDIA MENTORES SCL */
+google.charts.load('current', {'packages':['bar']});
+google.charts.setOnLoadCallback(drawChartAveregeTeacherSCLBarras);
+
+function drawChartAveregeTeacherSCLBarras() {
+  var data = google.visualization.arrayToDataTable([
+    ['Turma', 'Média Mentores'],
+    ['2016-2',averegeTecher20162],
+    ['2017-1',averegeTecher20171 ],
+    ['2017-2', averegeTecher20172 ],
+   
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Média Mentores Sede - SCL',
+      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+    }
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('barraAveregeTeacherSCL'));
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
 }
