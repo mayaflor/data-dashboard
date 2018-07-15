@@ -126,7 +126,7 @@ function curveChartGradesAQP() {
   ]);
 
   var options = {
-    title: 'Company Performance',
+    title: 'Média de notas em Arequipa',
     curveType: 'function',
     legend: { position: 'bottom' }
   };
@@ -135,6 +135,58 @@ function curveChartGradesAQP() {
 
   chart.draw(chartData, options);
 }
+
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de AQP 2016-2
+var noCumpleAQP1 = [] ;
+var cumpleAQP1 = [] ;
+var superaAQP1 = [] ;
+for (i in data['AQP']['2016-2']['ratings']) {
+  noCumpleAQP1.push(data['AQP']['2016-2']['ratings'][i]['student']['no-cumple']);
+  cumpleAQP1.push(data['AQP']['2016-2']['ratings'][i]['student']['cumple']);
+  superaAQP1.push(data['AQP']['2016-2']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleAQP1 = (noCumpleAQP1.reduce((a, b) => a + b)) / noCumpleAQP1.length ;
+var averageCumpleAQP1 = (cumpleAQP1.reduce((a, b) => a + b)) / cumpleAQP1.length ;
+var averagesuperaAQP1 = (superaAQP1.reduce((a, b) => a + b)) / superaAQP1.length ;
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de AQP 2017-1
+var noCumpleAQP2 = [] ;
+var cumpleAQP2 = [] ;
+var superaAQP2 = [] ;
+for (i in data['AQP']['2017-1']['ratings']) {
+  noCumpleAQP2.push(data['AQP']['2017-1']['ratings'][i]['student']['no-cumple']);
+  cumpleAQP2.push(data['AQP']['2017-1']['ratings'][i]['student']['cumple']);
+  superaAQP2.push(data['AQP']['2017-1']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleAQP2 = (noCumpleAQP2.reduce((a, b) => a + b)) / noCumpleAQP2.length ;
+var averageCumpleAQP2 = (cumpleAQP2.reduce((a, b) => a + b)) / cumpleAQP2.length ;
+var averagesuperaAQP2 = (superaAQP2.reduce((a, b) => a + b)) / superaAQP2.length ;
+
+// Gráfico do percentual de alunas satisfeitas com a experiência da Laboratória de AQP
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartSatisfiedAQP);
+
+function curveChartSatisfiedAQP() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Turma', 'Insatisfeita', 'Satisfeita', 'Muito Satisfeita'],
+    ['Turma 2016-2',averageNoCumpleAQP1,averageCumpleAQP1, averagesuperaAQP1],
+    ['Turma 2017-1',averageNoCumpleAQP2,averageCumpleAQP2, averagesuperaAQP2],
+  ]);
+
+  var options = {
+    title: 'Média de alunas satisfeitas com a experiência da Laboratória de Arequipa',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedAQP'));
+
+  chart.draw(chartData, options);
+}
+
+
 
 
 
@@ -169,6 +221,57 @@ function donutchartActiveCDMX() {
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveCDMX'));
   chart.draw(chartData, options);
 }
+
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de CDMX 2017-1
+var noCumpleCDMX1 = [] ;
+var cumpleCDMX1 = [] ;
+var superaCDMX1 = [] ;
+for (i in data['CDMX']['2017-1']['ratings']) {
+  noCumpleCDMX1.push(data['CDMX']['2017-1']['ratings'][i]['student']['no-cumple']);
+  cumpleCDMX1.push(data['CDMX']['2017-1']['ratings'][i]['student']['cumple']);
+  superaCDMX1.push(data['CDMX']['2017-1']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleCDMX1 = (noCumpleCDMX1.reduce((a, b) => a + b)) / noCumpleCDMX1.length ;
+var averageCumpleCDMX1 = (cumpleCDMX1.reduce((a, b) => a + b)) / cumpleCDMX1.length ;
+var averagesuperaCDMX1 = (superaCDMX1.reduce((a, b) => a + b)) / superaCDMX1.length ;
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de CDMX 2017-2
+var noCumpleCDMX2 = [] ;
+var cumpleCDMX2 = [] ;
+var superaCDMX2 = [] ;
+for (i in data['CDMX']['2017-2']['ratings']) {
+  noCumpleCDMX2.push(data['CDMX']['2017-2']['ratings'][i]['student']['no-cumple']);
+  cumpleCDMX2.push(data['CDMX']['2017-2']['ratings'][i]['student']['cumple']);
+  superaCDMX2.push(data['CDMX']['2017-2']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleCDMX2 = (noCumpleCDMX2.reduce((a, b) => a + b)) / noCumpleCDMX2.length ;
+var averageCumpleCDMX2 = (cumpleCDMX2.reduce((a, b) => a + b)) / cumpleCDMX2.length ;
+var averagesuperaCDMX2 = (superaCDMX2.reduce((a, b) => a + b)) / superaCDMX2.length ;
+
+// Gráfico do percentual de alunas satisfeitas com a experiência da Laboratória de CDMX
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartSatisfiedCDMX);
+
+function curveChartSatisfiedCDMX() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Turma', 'Insatisfeita', 'Satisfeita', 'Muito Satisfeita'],
+    ['Turma 2016-2',averageNoCumpleCDMX1,averageCumpleCDMX1, averagesuperaCDMX1],
+    ['Turma 2017-1',averageNoCumpleCDMX2,averageCumpleCDMX2, averagesuperaCDMX2],
+  ]);
+
+  var options = {
+    title: 'Média de alunas satisfeitas com a experiência da Laboratória na Cidade do México',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedCDMX'));
+
+  chart.draw(chartData, options);
+}
+
 
 
 
@@ -206,6 +309,71 @@ function donutchartActiveLIM() {
   chart.draw(chartData, options);
 }
 
+// O percentual de alunas satisfeitas com a experiência da Laboratória de LIM 2016-2
+var noCumpleLIM1 = [] ;
+var cumpleLIM1 = [] ;
+var superaLIM1 = [] ;
+for (i in data['LIM']['2016-2']['ratings']) {
+  noCumpleLIM1.push(data['LIM']['2016-2']['ratings'][i]['student']['no-cumple']);
+  cumpleLIM1.push(data['LIM']['2016-2']['ratings'][i]['student']['cumple']);
+  superaLIM1.push(data['LIM']['2016-2']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleLIM1 = (noCumpleLIM1.reduce((a, b) => a + b)) / noCumpleLIM1.length ;
+var averageCumpleLIM1 = (cumpleLIM1.reduce((a, b) => a + b)) / cumpleLIM1.length ;
+var averagesuperaLIM1 = (superaLIM1.reduce((a, b) => a + b)) / superaLIM1.length ;
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de LIM 2017-1
+var noCumpleLIM2 = [] ;
+var cumpleLIM2 = [] ;
+var superaLIM2 = [] ;
+for (i in data['LIM']['2017-1']['ratings']) {
+  noCumpleLIM2.push(data['LIM']['2017-1']['ratings'][i]['student']['no-cumple']);
+  cumpleLIM2.push(data['LIM']['2017-1']['ratings'][i]['student']['cumple']);
+  superaLIM2.push(data['LIM']['2017-1']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleLIM2 = (noCumpleLIM2.reduce((a, b) => a + b)) / noCumpleLIM2.length ;
+var averageCumpleLIM2 = (cumpleLIM2.reduce((a, b) => a + b)) / cumpleLIM2.length ;
+var averagesuperaLIM2 = (superaLIM2.reduce((a, b) => a + b)) / superaLIM2.length ;
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de LIM 2017-2
+var noCumpleLIM3 = [] ;
+var cumpleLIM3 = [] ;
+var superaLIM3 = [] ;
+for (i in data['LIM']['2017-2']['ratings']) {
+  noCumpleLIM3.push(data['LIM']['2017-2']['ratings'][i]['student']['no-cumple']);
+  cumpleLIM3.push(data['LIM']['2017-2']['ratings'][i]['student']['cumple']);
+  superaLIM3.push(data['LIM']['2017-2']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleLIM3 = (noCumpleLIM3.reduce((a, b) => a + b)) / noCumpleLIM3.length ;
+var averageCumpleLIM3 = (cumpleLIM3.reduce((a, b) => a + b)) / cumpleLIM3.length ;
+var averagesuperaLIM3 = (superaLIM3.reduce((a, b) => a + b)) / superaLIM3.length ;
+
+// Gráfico do percentual de alunas satisfeitas com a experiência da Laboratória de LIM
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartSatisfiedLIM);
+
+function curveChartSatisfiedLIM() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Turma', 'Insatisfeita', 'Satisfeita', 'Muito Satisfeita'],
+    ['Turma 2016-2',averageNoCumpleLIM1,averageCumpleLIM1, averagesuperaLIM1],
+    ['Turma 2017-1',averageNoCumpleLIM2,averageCumpleLIM2, averagesuperaLIM2],
+    ['Turma 2017-2',averageNoCumpleLIM3,averageCumpleLIM3, averagesuperaLIM3],
+  ]);
+
+  var options = {
+    title: 'Média de alunas satisfeitas com a experiência da Laboratória de Lima',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedLIM'));
+
+  chart.draw(chartData, options);
+}
+
+
+
 
 
 
@@ -241,6 +409,69 @@ function donutchartActiveSCL() {
   chart.draw(chartData, options);
 }
 
+// O percentual de alunas satisfeitas com a experiência da Laboratória de SCL 2016-2
+var noCumpleSCL1 = [] ;
+var cumpleSCL1 = [] ;
+var superaSCL1 = [] ;
+for (i in data['SCL']['2016-2']['ratings']) {
+  noCumpleSCL1.push(data['SCL']['2016-2']['ratings'][i]['student']['no-cumple']);
+  cumpleSCL1.push(data['SCL']['2016-2']['ratings'][i]['student']['cumple']);
+  superaSCL1.push(data['SCL']['2016-2']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleSCL1 = (noCumpleSCL1.reduce((a, b) => a + b)) / noCumpleSCL1.length ;
+var averageCumpleSCL1 = (cumpleSCL1.reduce((a, b) => a + b)) / cumpleSCL1.length ;
+var averagesuperaSCL1 = (superaSCL1.reduce((a, b) => a + b)) / superaSCL1.length ;
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de SCL 2017-1
+var noCumpleSCL2 = [] ;
+var cumpleSCL2 = [] ;
+var superaSCL2 = [] ;
+for (i in data['SCL']['2017-1']['ratings']) {
+  noCumpleSCL2.push(data['SCL']['2017-1']['ratings'][i]['student']['no-cumple']);
+  cumpleSCL2.push(data['SCL']['2017-1']['ratings'][i]['student']['cumple']);
+  superaSCL2.push(data['SCL']['2017-1']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleSCL2 = (noCumpleSCL2.reduce((a, b) => a + b)) / noCumpleSCL2.length ;
+var averageCumpleSCL2 = (cumpleSCL2.reduce((a, b) => a + b)) / cumpleSCL2.length ;
+var averagesuperaSCL2 = (superaSCL2.reduce((a, b) => a + b)) / superaSCL2.length ;
+
+// O percentual de alunas satisfeitas com a experiência da Laboratória de SCL 2017-2
+var noCumpleSCL3 = [] ;
+var cumpleSCL3 = [] ;
+var superaSCL3 = [] ;
+for (i in data['SCL']['2017-2']['ratings']) {
+  noCumpleSCL3.push(data['SCL']['2017-2']['ratings'][i]['student']['no-cumple']);
+  cumpleSCL3.push(data['SCL']['2017-2']['ratings'][i]['student']['cumple']);
+  superaSCL3.push(data['SCL']['2017-2']['ratings'][i]['student']['supera']);
+}
+var averageNoCumpleSCL3 = (noCumpleSCL3.reduce((a, b) => a + b)) / noCumpleSCL3.length ;
+var averageCumpleSCL3 = (cumpleSCL3.reduce((a, b) => a + b)) / cumpleSCL3.length ;
+var averagesuperaSCL3 = (superaSCL3.reduce((a, b) => a + b)) / superaSCL3.length ;
+
+// Gráfico do percentual de alunas satisfeitas com a experiência da Laboratória de SCL
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(curveChartSatisfiedSCL);
+
+function curveChartSatisfiedSCL() {
+  var chartData = google.visualization.arrayToDataTable([
+    ['Turma', 'Insatisfeita', 'Satisfeita', 'Muito Satisfeita'],
+    ['Turma 2016-2',averageNoCumpleSCL1,averageCumpleSCL1, averagesuperaSCL1],
+    ['Turma 2017-1',averageNoCumpleSCL2,averageCumpleSCL2, averagesuperaSCL2],
+    ['Turma 2017-2',averageNoCumpleSCL3,averageCumpleSCL3, averagesuperaSCL3],
+  ]);
+
+  var options = {
+    title: 'Média de alunas satisfeitas com a experiência da Laboratória de Santiago',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedSCL'));
+
+  chart.draw(chartData, options);
+}
+
 
 
 
@@ -267,6 +498,8 @@ function donutchartActiveLAB() {
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveLAB'));
   chart.draw(chartData, options);
 }
+
+
 
 //-------------NPS POR TURMA SCL 2017-2------------//
 
