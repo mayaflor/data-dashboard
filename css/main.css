@@ -12,13 +12,33 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'bitterregular';
+  src: url('bitter-regular-webfont.woff2') format('woff2'),
+       url('bitter-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('opensans-regular-webfont.woff2') format('woff2'),
+       url('opensans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 body {
 	margin: 0 auto;
 	line-height: 1.71429;
     height: 100%;
-    font-family: 'montserrat';
+    font-family: 'open_sansregular', sans-serif;
 } 
 
+h1 {
+  font-family: 'bitterregular', serif;
+}
 
 .section {
   display: flex;
