@@ -25,6 +25,7 @@ function donutchartActiveAQP() {
   var options = {
     title: 'Número de alunas presentes e desistentes em Arequipa',
     pieHole: 0.4,
+    colors:['#ffe521','#56f89a',]
   };
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveAQP'));
   chart.draw(chartData, options);
@@ -128,7 +129,8 @@ function curveChartGradesAQP() {
   var options = {
     title: 'Média de notas em Arequipa',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesAQP'));
@@ -177,7 +179,8 @@ function curveChartSatisfiedAQP() {
   var options = {
     title: 'Média de alunas satisfeitas com a experiência da Laboratória de Arequipa',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#ff009e','#56f89a']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedAQP'));
@@ -216,6 +219,7 @@ function donutchartActiveCDMX() {
   var options = {
     title: 'Número de alunas presentes e desistentes na Cidade do México',
     pieHole: 0.4,
+    colors:['#ffe521','#ff009e']
   };
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveCDMX'));
   chart.draw(chartData, options);
@@ -298,7 +302,9 @@ function curveChartGradesCDMX() {
   var options = {
     title: 'Média de notas na Cidade do México',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
+    
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesCDMX'));
@@ -351,7 +357,8 @@ function curveChartSatisfiedCDMX() {
   var options = {
     title: 'Média de alunas satisfeitas com a experiência da Laboratória na Cidade do México',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedCDMX'));
@@ -391,6 +398,7 @@ function donutchartActiveLIM() {
   var options = {
     title: 'Número de alunas presentes e desistentes em Lima',
     pieHole: 0.4,
+    colors:['#ffe521','#56f89a','#ff009e']
   };
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveLIM'));
   chart.draw(chartData, options);
@@ -516,7 +524,8 @@ function curveChartGradesLIM() {
   var options = {
     title: 'Média de notas em Lima',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesLIM'));
@@ -582,7 +591,8 @@ function curveChartSatisfiedLIM() {
   var options = {
     title: 'Média de alunas satisfeitas com a experiência da Laboratória de Lima',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedLIM'));
@@ -622,6 +632,7 @@ function donutchartActiveSCL() {
   var options = {
     title: 'Número de alunas presentes e desistentes em Santiago',
     pieHole: 0.4,
+    colors:['#ffe521','#56f89a','#ff009e']
   };
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveSCL'));
   chart.draw(chartData, options);
@@ -761,7 +772,8 @@ function curveChartGradesSCL() {
   var options = {
     title: 'Média de notas em Santiago',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesSCL'));
@@ -828,7 +840,8 @@ function curveChartSatisfiedSCL() {
   var options = {
     title: 'Média de alunas satisfeitas com a experiência da Laboratória de Santiago',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ffe521','#56f89a','#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartSatisfiedSCL'));
@@ -858,6 +871,7 @@ function donutchartActiveLAB() {
   var options = {
     title: 'Número de alunas presentes e desistentes na Laboratória',
     pieHole: 0.4,
+    colors:['#ffe521','#56f89a','#ff009e']
   };
   var chart = new google.visualization.PieChart(document.getElementById('donutchartActiveLAB'));
   chart.draw(chartData, options);
@@ -886,7 +900,8 @@ function curveChartGradesLAB() {
   var options = {
     title: 'Média de notas na Laboratória',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesLAB'));
@@ -925,6 +940,7 @@ var data = google.visualization.arrayToDataTable([
 var options = {
 title: 'NPS: AQP-2016-2',
 pieHole: 0.4,
+colors:['#ffe521','#56f89a','#ff009e']
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('donutchartAQP20162'));
@@ -960,6 +976,7 @@ var data = google.visualization.arrayToDataTable([
 var options = {
 title: 'NPS: AQP-2016-2',
 pieHole: 0.4,
+colors:['#ffe521','#56f89a','#ff009e']
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('donutchartAQP20171'));
@@ -1003,6 +1020,7 @@ chart.draw(data, options);
  var options = {
  title: 'NPS: CDMX-2017-1',
  pieHole: 0.4,
+ colors:['#ffe521','#56f89a','#ff009e']
  };
  
  var chart = new google.visualization.PieChart(document.getElementById('donutchartCDMX20171'));
@@ -1045,6 +1063,7 @@ chart.draw(data, options);
  var options = {
  title: 'NPS: CDMX-2017-2',
  pieHole: 0.4,
+ colors:['#ffe521','#56f89a','#ff009e']
  };
  
  var chart = new google.visualization.PieChart(document.getElementById('donutchartCDMX20172'));
@@ -1085,6 +1104,7 @@ chart.draw(data, options);
  var options = {
  title: 'NPS: LIM-2016-2',
  pieHole: 0.4,
+ colors:['#ffe521','#56f89a','#ff009e']
  };
  
  var chart = new google.visualization.PieChart(document.getElementById('donutchartLIM20162'));
@@ -1120,11 +1140,13 @@ var data = google.visualization.arrayToDataTable([
 ['Neutras', pasivasLIM20172],
 ['Não indicariam', detractorasLIM20172],
 
+
 ]);
 
 var options = {
 title: 'NPS: LIM-2017-2',
 pieHole: 0.4,
+colors:['#ffe521','#56f89a','#ff009e']
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('donutchartLIM20172'));
@@ -1168,6 +1190,7 @@ chart.draw(data, options);
  var options = {
  title: 'NPS: LIM-2017-1',
  pieHole: 0.4,
+ colors:['#ffe521','#56f89a','#ff009e']
  };
  
  var chart = new google.visualization.PieChart(document.getElementById('donutchartLIM20171'));
@@ -1210,6 +1233,7 @@ chart.draw(data, options);
   var options = {
   title: 'NPS: SCL-2016-2',
   pieHole: 0.4,
+  colors:['#ffe521','#56f89a','#ff009e']
   };
   
   var chart = new google.visualization.PieChart(document.getElementById('donutchartNPSSCL20162'));
@@ -1250,6 +1274,7 @@ var data = google.visualization.arrayToDataTable([
 var options = {
 title: 'NPS: SCL-2017-1',
 pieHole: 0.4,
+colors:['#ffe521','#56f89a','#ff009e']
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('donutchartNPS20171'));
@@ -1290,6 +1315,7 @@ var data = google.visualization.arrayToDataTable([
 var options = {
 title: 'NPS: SCL-2017-2',
 pieHole: 0.4,
+colors:['#ffe521','#56f89a','#ff009e']
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('donutchartNPS'));
@@ -1337,7 +1363,8 @@ function drawChartAveregeJediAQP() {
   var options = {
     title: 'Média nota do Jedi AQP',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediAQP'));
@@ -1382,7 +1409,8 @@ function drawChartAveregeJediCDMX() {
   var options = {
     title: 'Média nota do Jedi CDMX',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediCDMX'));
@@ -1436,7 +1464,8 @@ function drawChartAveregeJediLIM() {
   var options = {
     title: 'Média nota do Jedi LIM',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediLIM'));
@@ -1494,7 +1523,8 @@ function drawChartAveregeJediSCL() {
   var options = {
     title: 'Média nota do Jedi SCL',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:['#ff009e']
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediSCL'));
@@ -1522,6 +1552,7 @@ function drawChartAveregeJediSCL() {
           chart: {
             title: 'Média Jedi Sede - SCL',
             subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            colors:['#ffe521','#56f89a','#ff009e']
           }
         };
 
@@ -1572,7 +1603,8 @@ function drawChartAveregeteacherAQP() {
   var options = {
     title: 'Média nota do teacher AQP',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:[ '#56f89a' ]
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherAQP'));
@@ -1617,7 +1649,8 @@ function drawChartAveregeteacherCDMX() {
   var options = {
     title: 'Média nota do teacher CDMX',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:[ '#56f89a' ]
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherCDMX'));
@@ -1671,7 +1704,8 @@ function drawChartAveregeteacherLIM() {
   var options = {
     title: 'Média nota do teacher LIM',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:[ '#56f89a' ]
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherLIM'));
@@ -1729,7 +1763,8 @@ function drawChartAveregeteacherSCL() {
   var options = {
     title: 'Média nota do teacher SCL',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    colors:[ '#56f89a' ]
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherSCL'));
@@ -1792,6 +1827,7 @@ function drawChartAveregeTeacherSCLBarras() {
     chart: {
       title: 'Média Mentores Sede - SCL',
       subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      colors:[ '#56f89a' ]
     }
   };
 
