@@ -136,7 +136,14 @@ function curveChartGradesAQP() {
     colors:['#ffe521','#56f89a','#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+      viewWindow:
+      {
+              min: 0,
+              max:3000,
+      }
+      },
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesAQP'));
@@ -318,7 +325,14 @@ function curveChartGradesCDMX() {
     colors:['#ffe521','#56f89a','#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+      viewWindow:
+      {
+              min: 0,
+              max:3000,
+      }
+      },
     
   };
 
@@ -549,7 +563,14 @@ function curveChartGradesLIM() {
     colors:['#ffe521','#56f89a','#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+      viewWindow:
+      {
+              min: 0,
+              max:3000,
+      }
+      },
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesLIM'));
@@ -806,7 +827,14 @@ function curveChartGradesSCL() {
     colors:['#ffe521','#56f89a','#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+      viewWindow:
+      {
+              min: 0,
+              max:3000,
+      }
+      },
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesSCL'));
@@ -943,7 +971,14 @@ function curveChartGradesLAB() {
     colors:['#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+      viewWindow:
+      {
+              min: 0,
+              max:3000,
+      }
+      },
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveChartGradesLAB'));
