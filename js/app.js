@@ -1433,13 +1433,20 @@ function drawChartAveregeJediAQP() {
   ]);
 
   var options = {
-    title: 'Média nota do Jedi AQP',
+    title: 'Média dos Jedi - AQP',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:['#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediAQP'));
@@ -1482,13 +1489,20 @@ function drawChartAveregeJediCDMX() {
   ]);
 
   var options = {
-    title: 'Média nota do Jedi CDMX',
+    title: 'Média dos Jedi - CDMX',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:['#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediCDMX'));
@@ -1540,13 +1554,20 @@ function drawChartAveregeJediLIM() {
   ]);
 
   var options = {
-    title: 'Média nota do Jedi LIM',
+    title: 'Média dos Jedi - LIM',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:['#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediLIM'));
@@ -1602,13 +1623,20 @@ function drawChartAveregeJediSCL() {
   ]);
 
   var options = {
-    title: 'Média nota do Jedi SCL',
+    title: 'Média dos Jedi - SCL',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:['#ff009e'],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeJediSCL'));
@@ -1634,12 +1662,19 @@ function drawChartAveregeJediSCL() {
 
         var options = {
           chart: {
-            title: 'Média Jedi Sede - SCL',
+            title: 'Média dos Jedi - SCL',
             subtitle: 'Sales, Expenses, and Profit: 2014-2017',
             colors:['#ffe521','#56f89a','#ff009e'],
             fontName: 'open_sansregular',
             titleTextStyle: {
-              fontSize: 16,}
+              fontSize: 16,},
+              vAxis: {
+                viewWindow:
+                {
+                        min: 0,
+                        max: 5,
+                }
+              }
           }
         };
 
@@ -1688,13 +1723,20 @@ function drawChartAveregeteacherAQP() {
   ]);
 
   var options = {
-    title: 'Média nota do teacher AQP',
+    title: 'Média dos Mentores- AQP',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:[ '#56f89a' ],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherAQP'));
@@ -1737,13 +1779,20 @@ function drawChartAveregeteacherCDMX() {
   ]);
 
   var options = {
-    title: 'Média nota do teacher CDMX',
+    title: 'Média dos Mentores- CDMX',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:[ '#56f89a' ],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherCDMX'));
@@ -1795,13 +1844,21 @@ function drawChartAveregeteacherLIM() {
   ]);
 
   var options = {
-    title: 'Média nota do teacher LIM',
+    title: 'Média dos Mentores- LIM',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:[ '#56f89a' ],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
+      
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherLIM'));
@@ -1857,14 +1914,22 @@ function drawChartAveregeteacherSCL() {
   ]);
 
   var options = {
-    title: 'Média nota do teacher SCL',
+    title: 'Média dos Mentores- SCL',
     curveType: 'function',
     legend: { position: 'bottom' },
     colors:[ '#56f89a' ],
     fontName: 'open_sansregular',
     titleTextStyle: {
-      fontSize: 16,}
-  };
+      fontSize: 16,},
+      vAxis: {
+        viewWindow:
+        {
+                min: 0,
+                max: 5,
+        }
+      }
+    };
+ 
 
   var chart = new google.visualization.LineChart(document.getElementById('curveAveregeteacherSCL'));
 
@@ -1924,7 +1989,7 @@ function drawChartAveregeTeacherSCLBarras() {
 
   var options = {
     chart: {
-      title: 'Média Mentores Sede - SCL',
+      title: 'Média dos Mentores Sede - SCL',
       subtitle: 'Sales, Expenses, and Profit: 2014-2017',
       colors:[ '#56f89a' ],
       fontName: 'open_sansregular',
