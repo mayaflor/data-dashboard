@@ -1,0 +1,10 @@
+.section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+.title {
+  display: flex;
+}
