@@ -1,3 +1,25 @@
+/*formatações gerais*/
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	line-height: 1.71429;
+    height: 100%;
+    font-family: 'montserrat';
+} 
+
+
 .section {
   display: flex;
   flex-flow: row wrap;
@@ -9,11 +31,48 @@
   display: flex;
   margin-left: 10%;
 }
-
-/*menu*/
- 
-#menuSede{
-  list-style-type: none;
+/*************header************/
+#header{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; 
+  height: 73px;
+  background-color: #ffe521;
+  font-family: 'montserrat';
 }
+
+.headerLogo {
+ align-self: center;
+ text-align: center;
+ margin-top: 20px;
+ flex-grow: 2;
+}
+
+
+#login{
+align-self: center;
+margin: 70px;
+} 
+.user{
+ width: 50px;
+ border: 0.8px black solid;
+ height: 50px;
+ border-radius: 50%;
+/* background-color: #ff009e;*/
+background-color: #56f89a;
+}
+.user h3{
+ margin: 5px;
+ font-size: 1.5em;
+}
+/***************SEÇÃO MENU********/
+#menuAncora{
+  display: flex;
+ justify-content: flex-end;
+}
+#menuSede{
+list-style-type: none;
+display: flex;
+}
+#menuSede li {
+  margin:20px;
+  }

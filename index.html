@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"> 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <title>Data Dashboard</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>Data Dashboard</title>
+</head>
+
+<body>
+  <!--**************Seção Header*********************************-->
+  <div class="containerHeader">
+    <header id="header">
+      <figure class="headerLogo">
+          <img = src = 'assets/images/Laboratoria_RGB_logo-01.png' width="250px" height="70px" >  
+      </figure>
+      <section id="login">
+        <div class="user">
+          <h3>VP</h3>
+        </div>
+      </section>
+      </h1>
+  </div>
+  </header>
   <!--  <select id="drop-menu">
       <option value="none" selected>selecione</option>
         <option value="AQP">Arequipa</option>
@@ -15,134 +31,147 @@
         <option value="SCL">Santiago</option>   
     </select>-->
   <!-- ************************* MENU ********************** -->
-  <nav id ="menuAncora">
-    <ul id = "menuSede">
-      <li><a href="#l1">Arequipa</a><br/></li>
-      <li><a href="#l2">Cidade do Mexico</a><br/></li>
-      <li><a href="#l3">Lima</a><br/></li>
-      <li><a href="#l4">Santiago do Chile</a><br/></li>
-  </ul>
+  <nav id="menuAncora">
+        
+      <ul id="menuSede">
+          <li>
+              <a href="#l1">AREQUIPA</a>
+              <br/>
+          </li>
+          <li>
+              <a href="#l2">CIDADE DO MÉXICO</a>
+              <br/>
+          </li>
+          <li>
+              <a href="#l3">LIMA</a>
+              <br/>
+          </li>
+          <li>
+              <a href="#l4">SANTIAGO DO CHILE</a>
+              <br/>
+          </li>
+      </ul>
   </nav>
+</div>
 
-    <!-- *************************LAB********************** -->
-    <h1 class="title">Laboratória</h1>
-    <div class="first section">
-      <div id="donutchartActiveLAB" style="width: 650px; height: 500px;"></div>
-      <div id="curveChartGradesLAB" style="width: 650px; height: 500px"></div>
-    </div>
+  <!-- *************************LAB********************** -->
+  <h1 class="title">Laboratória</h1>
+  <div class="first section">
+    <div id="donutchartActiveLAB" style="width: 650px; height: 500px;"></div>
+    <div id="curveChartGradesLAB" style="width: 650px; height: 500px"></div>
+  </div>
 
-    <!-- *************************AQP********************** -->
-    <h1 id="l1" class="title">Arequipa</h1>
-    <div class="section">
-      <!--*********ALUNAS ATIVAS**************-->
-      <div id="donutchartActiveAQP" style="width: 650px; height: 500px;"></div>
-      <!--***********NOTAS**************-->
-      <div id="curveChartGradesAQP" style="width: 650px; height: 500px"></div>
-    </div>
-    <div class="section">
-        <!--**********SATISFAÇÃO**************-->
-      <div id="curveChartSatisfiedAQP" style="width: 900px; height: 500px"></div>
-    </div>
-    <div class="section">
-      <!--***************NPS AQP 2016-2******************-->
-      <div id="donutchartAQP20162" style="width: 650px; height: 500px;"></div>
-      <!--****************NPS AQP 2017-1******************-->
-      <div id="donutchartAQP20171" style="width: 650px; height: 500px;"></div>
-    </div>
-    <div class="section">
-      <!--**********MEDIA JEDI  **************-->
-      <div id="curveAveregeJediAQP" style="width: 650px; height: 500px"></div>
-      <!--***********MEDIA mentores AQP  **************-->
-      <div id="curveAveregeteacherAQP" style="width: 650px; height: 500px;"></div>
-    </div>
+  <!-- *************************AQP********************** -->
+  <h1 id="l1" class="title">Arequipa</h1>
+  <div class="section">
+    <!--*********ALUNAS ATIVAS**************-->
+    <div id="donutchartActiveAQP" style="width: 650px; height: 500px;"></div>
+    <!--***********NOTAS**************-->
+    <div id="curveChartGradesAQP" style="width: 650px; height: 500px"></div>
+  </div>
+  <div class="section">
+    <!--**********SATISFAÇÃO**************-->
+    <div id="curveChartSatisfiedAQP" style="width: 900px; height: 500px"></div>
+  </div>
+  <div class="section">
+    <!--***************NPS AQP 2016-2******************-->
+    <div id="donutchartAQP20162" style="width: 650px; height: 500px;"></div>
+    <!--****************NPS AQP 2017-1******************-->
+    <div id="donutchartAQP20171" style="width: 650px; height: 500px;"></div>
+  </div>
+  <div class="section">
+    <!--**********MEDIA JEDI  **************-->
+    <div id="curveAveregeJediAQP" style="width: 650px; height: 500px"></div>
+    <!--***********MEDIA mentores AQP  **************-->
+    <div id="curveAveregeteacherAQP" style="width: 650px; height: 500px;"></div>
+  </div>
 
-    <!-- *************************CDMX********************** -->
-    <h1 id="l2" class="title">Cidade do México</h1>
-    <div class="section">
-      <!--************ALUNAS ATIVAS**************-->
-      <div id="donutchartActiveCDMX" style="width: 650px; height: 500px;"></div>
-      <!--**********NOTAS**************-->
-      <div id="curveChartGradesCDMX" style="width: 650px; height: 500px"></div>
-    </div>
-    <div class="section">
-      <!--*************SATISFAÇÃO**************-->
-      <div id="curveChartSatisfiedCDMX" style="width: 900px; height: 500px"></div>
-    </div>
-    <div class="section">
-      <!--*****************NPS  2017-1******************-->
-      <div id="donutchartCDMX20171" style="width: 650px; height: 500px;"></div>
-      <!--***************NPS  -2017-2******************-->
-      <div id="donutchartCDMX20172" style="width: 650px; height: 500px;"></div>
-    </div>
-    <div class="section">
-      <!--***********MEDIA JEDI  CDMX**************-->
-      <div id="curveAveregeJediCDMX" style="width: 650px; height: 500px"></div>
-      <!--**********MEDIA mentores CDMX  **************-->
-      <div id="curveAveregeteacherCDMX" style="width: 650px; height: 500px;"></div>
-    </div>
+  <!-- *************************CDMX********************** -->
+  <h1 id="l2" class="title">Cidade do México</h1>
+  <div class="section">
+    <!--************ALUNAS ATIVAS**************-->
+    <div id="donutchartActiveCDMX" style="width: 650px; height: 500px;"></div>
+    <!--**********NOTAS**************-->
+    <div id="curveChartGradesCDMX" style="width: 650px; height: 500px"></div>
+  </div>
+  <div class="section">
+    <!--*************SATISFAÇÃO**************-->
+    <div id="curveChartSatisfiedCDMX" style="width: 900px; height: 500px"></div>
+  </div>
+  <div class="section">
+    <!--*****************NPS  2017-1******************-->
+    <div id="donutchartCDMX20171" style="width: 650px; height: 500px;"></div>
+    <!--***************NPS  -2017-2******************-->
+    <div id="donutchartCDMX20172" style="width: 650px; height: 500px;"></div>
+  </div>
+  <div class="section">
+    <!--***********MEDIA JEDI  CDMX**************-->
+    <div id="curveAveregeJediCDMX" style="width: 650px; height: 500px"></div>
+    <!--**********MEDIA mentores CDMX  **************-->
+    <div id="curveAveregeteacherCDMX" style="width: 650px; height: 500px;"></div>
+  </div>
 
-    <!-- *************************LIM********************** -->
-    <h1 id="l3" class="title">Lima</h1>
-    <div class="section">
-      <!--************ALUNAS ATIVAS**************-->
-      <div id="donutchartActiveLIM" style="width: 650px; height: 500px;"></div>
-      <!--************NOTAS**************-->
-      <div id="curveChartGradesLIM" style="width: 650px; height: 500px"></div>
-    </div>
-    <div class="section">
-      <!--***********SATISFAÇÃO**************-->
-      <div id="curveChartSatisfiedLIM" style="width: 650px; height: 500px"></div>
-      <!--****************NPS 2016-2******************-->
-      <div id="donutchartLIM20162" style="width: 650px; height: 500px;"></div>
-    </div>
-    <div class="section">
-      <!--***************NPS 2017-1******************-->
-      <div id="donutchartLIM20171" style="width: 650px; height: 500px;"></div>
-      <!--****************NPS 2017-2******************-->
-      <div id="donutchartLIM20172" style="width: 650px; height: 500px;"></div>
-    </div>
-    <div class="section">
-      <!--************MEDIA JEDI  LIM**************-->
-      <div id="curveAveregeJediLIM" style="width: 650px; height: 500px"></div>
-      <!--***********MEDIA mentores LIM **************-->
-      <div id="curveAveregeteacherLIM" style="width: 650px; height: 500px;"></div>
-    </div>
+  <!-- *************************LIM********************** -->
+  <h1 id="l3" class="title">Lima</h1>
+  <div class="section">
+    <!--************ALUNAS ATIVAS**************-->
+    <div id="donutchartActiveLIM" style="width: 650px; height: 500px;"></div>
+    <!--************NOTAS**************-->
+    <div id="curveChartGradesLIM" style="width: 650px; height: 500px"></div>
+  </div>
+  <div class="section">
+    <!--***********SATISFAÇÃO**************-->
+    <div id="curveChartSatisfiedLIM" style="width: 650px; height: 500px"></div>
+    <!--****************NPS 2016-2******************-->
+    <div id="donutchartLIM20162" style="width: 650px; height: 500px;"></div>
+  </div>
+  <div class="section">
+    <!--***************NPS 2017-1******************-->
+    <div id="donutchartLIM20171" style="width: 650px; height: 500px;"></div>
+    <!--****************NPS 2017-2******************-->
+    <div id="donutchartLIM20172" style="width: 650px; height: 500px;"></div>
+  </div>
+  <div class="section">
+    <!--************MEDIA JEDI  LIM**************-->
+    <div id="curveAveregeJediLIM" style="width: 650px; height: 500px"></div>
+    <!--***********MEDIA mentores LIM **************-->
+    <div id="curveAveregeteacherLIM" style="width: 650px; height: 500px;"></div>
+  </div>
 
-    <!-- *************************SCL********************** -->
-    <h1 id="l4" class="title">Santiago</h1>
-    <div class="section">
-      <!--***********ALUNAS ATIVAS**************-->
-      <div id="donutchartActiveSCL" style="width: 650px; height: 500px;"></div>
-      <!--*************NOTAS**************-->
-      <div id="curveChartGradesSCL" style="width: 650px; height: 500px"></div>
-    </div>
-    <div class="section">
-      <!--************SATISFAÇÃO**************-->
-      <div id="curveChartSatisfiedSCL" style="width: 650px; height: 500px"></div>
-      <!--*****************NPS SCL-2016-2******************-->
-      <div id="donutchartNPSSCL20162" style="width: 650px; height: 500px;"></div>
-    </div>
-    <div class="section"> 
-      <!--*****************NPS SCL-2017-1******************-->
-      <div id="donutchartNPS20171" style="width: 650px; height: 500px;"></div>
-      <!--*******************NPS SCL-2017-2******************-->
-      <div id="donutchartNPS" style="width: 650px; height: 500px;"></div>
-    </div>
-    <div class="section">
-      <!--**************MEDIA JEDI SCL  **************-->
-      <div id="curveAveregeJediSCL" style="width: 650px; height: 500px;"></div>
-      <!--***************MEDIA mentores SCL  **************-->
-      <div id="curveAveregeteacherSCL" style="width: 650px; height: 500px;"></div>
-    </div>
-    <!--********************MEDIA mentores SCL (GRÁFICO BARRA)**************
+  <!-- *************************SCL********************** -->
+  <h1 id="l4" class="title">Santiago</h1>
+  <div class="section">
+    <!--***********ALUNAS ATIVAS**************-->
+    <div id="donutchartActiveSCL" style="width: 650px; height: 500px;"></div>
+    <!--*************NOTAS**************-->
+    <div id="curveChartGradesSCL" style="width: 650px; height: 500px"></div>
+  </div>
+  <div class="section">
+    <!--************SATISFAÇÃO**************-->
+    <div id="curveChartSatisfiedSCL" style="width: 650px; height: 500px"></div>
+    <!--*****************NPS SCL-2016-2******************-->
+    <div id="donutchartNPSSCL20162" style="width: 650px; height: 500px;"></div>
+  </div>
+  <div class="section">
+    <!--*****************NPS SCL-2017-1******************-->
+    <div id="donutchartNPS20171" style="width: 650px; height: 500px;"></div>
+    <!--*******************NPS SCL-2017-2******************-->
+    <div id="donutchartNPS" style="width: 650px; height: 500px;"></div>
+  </div>
+  <div class="section">
+    <!--**************MEDIA JEDI SCL  **************-->
+    <div id="curveAveregeJediSCL" style="width: 650px; height: 500px;"></div>
+    <!--***************MEDIA mentores SCL  **************-->
+    <div id="curveAveregeteacherSCL" style="width: 650px; height: 500px;"></div>
+  </div>
+  <!--********************MEDIA mentores SCL (GRÁFICO BARRA)**************
     <div id="barraAveregeTeacherSCL" style="width: 650px; height: 500px;"></div>-->
- 
-		<!-- Base de datos -->
-		<script type="text/javascript" src="./js/data.js"></script>
-		<!-- Aquí va tus archivos JS -->
-    <script type="text/javascript"  src="./js/app.js"></script>
-    <!-- gráficos -->
-  </body>
-</html>
 
- 
+  <!-- Base de datos -->
+  <script type="text/javascript" src="./js/data.js"></script>
+  <!-- Aquí va tus archivos JS -->
+  <script type="text/javascript" src="./js/app.js"></script>
+  <!-- gráficos -->
+</body>
+
+</html>
