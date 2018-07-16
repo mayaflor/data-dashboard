@@ -7,13 +7,22 @@
     <title>Data Dashboard</title>
   </head>
   <body>
-    <select id="drop-menu">
+  <!--  <select id="drop-menu">
       <option value="none" selected>selecione</option>
         <option value="AQP">Arequipa</option>
         <option value="LIM">Lima</option>
         <option value="CDMX">Cidade do México</option>
         <option value="SCL">Santiago</option>   
-    </select>
+    </select>-->
+  <!-- ************************* MENU ********************** -->
+  <nav id ="menuAncora">
+    <ul id = "menuSede">
+      <li><a href="#l1">Arequipa</a><br/></li>
+      <li><a href="#l2">Cidade do Mexico</a><br/></li>
+      <li><a href="#l3">Lima</a><br/></li>
+      <li><a href="#l4">Santiago do Chile</a><br/></li>
+  </ul>
+  </nav>
 
     <!-- *************************LAB********************** -->
     <h1 class="title">Laboratória</h1>
@@ -23,7 +32,7 @@
     </div>
 
     <!-- *************************AQP********************** -->
-    <h1 class="title">Arequipa</h1>
+    <h1 id="l1" class="title">Arequipa</h1>
     <div class="section">
       <!--*********ALUNAS ATIVAS**************-->
       <div id="donutchartActiveAQP" style="width: 650px; height: 500px;"></div>
@@ -48,7 +57,7 @@
     </div>
 
     <!-- *************************CDMX********************** -->
-    <h1 class="title">Cidade do México</h1>
+    <h1 id="l2" class="title">Cidade do México</h1>
     <div class="section">
       <!--************ALUNAS ATIVAS**************-->
       <div id="donutchartActiveCDMX" style="width: 650px; height: 500px;"></div>
@@ -73,7 +82,7 @@
     </div>
 
     <!-- *************************LIM********************** -->
-    <h1 class="title">Lima</h1>
+    <h1 id="l3" class="title">Lima</h1>
     <div class="section">
       <!--************ALUNAS ATIVAS**************-->
       <div id="donutchartActiveLIM" style="width: 650px; height: 500px;"></div>
@@ -100,7 +109,7 @@
     </div>
 
     <!-- *************************SCL********************** -->
-    <h1 class="title">Santiago</h1>
+    <h1 id="l4" class="title">Santiago</h1>
     <div class="section">
       <!--***********ALUNAS ATIVAS**************-->
       <div id="donutchartActiveSCL" style="width: 650px; height: 500px;"></div>
@@ -115,9 +124,9 @@
     </div>
     <div class="section"> 
       <!--*****************NPS SCL-2017-1******************-->
-      <div id="donutchartNPS20171" style="width: 650px; height: 20px;"></div>
+      <div id="donutchartNPS20171" style="width: 650px; height: 500px;"></div>
       <!--*******************NPS SCL-2017-2******************-->
-      <div id="donutchartNPS" style="width: 650px; height: 20px;"></div>
+      <div id="donutchartNPS" style="width: 650px; height: 500px;"></div>
     </div>
     <div class="section">
       <!--**************MEDIA JEDI SCL  **************-->

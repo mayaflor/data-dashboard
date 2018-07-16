@@ -9,3 +9,11 @@
   display: flex;
   margin-left: 10%;
 }
+
+/*menu*/
+ 
+#menuSede{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
