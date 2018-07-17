@@ -52,6 +52,12 @@ h1 {
   display: flex;
   margin-left: 10%;
 }
+
+
+.charts {
+  border-bottom: 3px solid #ffe521;
+}
+
 /*************header************/
 #header{
   display: flex;
@@ -199,6 +205,8 @@ border-bottom: 1.2px solid #ff009e;
 }
 
 .newDiv {
+  background-color: white;
+  border-bottom: 3px solid #ffe521;
   width: 100px;
   margin-right: 50px;
   margin-left: 50px;
@@ -227,3 +235,4 @@ border-bottom: 1.2px solid #ff009e;
     border-bottom: 1.2px solid #56f89a;
     /*border-bottom: 1.2px solid #56f89a;*/
   }
+
