@@ -114,6 +114,13 @@ margin-left: 60px;
   padding: 0;
 }
 /***************SEÇÃO MENU********/
+.sp {
+  display: block;
+  height: 180px; /*same height as header*/
+  margin-top: -180px; /*same height as header*/
+  visibility: hidden;
+}
+
 #menuAncora{
   display: flex;
  justify-content: flex-end;
