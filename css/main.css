@@ -125,8 +125,8 @@ margin-left: 60px;
 /***************SEÇÃO MENU********/
 .sp {
   display: block;
-  height: 180px; /*same height as header*/
-  margin-top: -180px; /*same height as header*/
+  height: 110px; /*same height as header*/
+  margin-top: -110px; /*same height as header*/
   visibility: hidden;
 }
 
