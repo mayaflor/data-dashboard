@@ -2037,3 +2037,23 @@ function drawChartAveregeTeacherSCLBarras() {
 
   chart.draw(data, google.charts.Bar.convertOptions(options));
 }
+
+
+// ********************ALUNAS***********************
+var studentsList = document.getElementById('studentsList')
+for (turma in data['AQP']) {
+  for (i in data['AQP'][turma]['students']){
+    var img = document.createElement('img');
+    img.src = data['AQP'][turma]['students'][i]['photo'];
+    var newDiv = document.createElement("div");
+    var name = data['AQP'][turma]['students'][i]['name'];
+    p = document.createElement('p'); 
+    p.innerHTML = name;
+    studentsList.appendChild(newDiv);
+    newDiv.appendChild(img);
+    newDiv.appendChild(p);
+    newDiv.setAttribute("class","newDiv");
+    img.height = 100;
+    img.width = 100;
+  }
+}

@@ -188,3 +188,19 @@ border-bottom: 1.2px solid #ff009e;
   width: 500px;
   height: 100px;
 }
+
+/* ALUNAS */
+
+
+#studentsList{ 
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.newDiv {
+  width: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
