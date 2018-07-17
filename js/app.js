@@ -2039,21 +2039,81 @@ function drawChartAveregeTeacherSCLBarras() {
 }
 
 
-// ********************ALUNAS***********************
-var studentsList = document.getElementById('studentsList')
+// ********************ALUNAS AQP***********************
+var studentsListAQP = document.getElementById('studentsListAQP')
 for (turma in data['AQP']) {
   for (i in data['AQP'][turma]['students']){
-    var img = document.createElement('img');
-    img.src = data['AQP'][turma]['students'][i]['photo'];
-    var newDiv = document.createElement("div");
-    var name = data['AQP'][turma]['students'][i]['name'];
-    p = document.createElement('p'); 
-    p.innerHTML = name;
-    studentsList.appendChild(newDiv);
-    newDiv.appendChild(img);
-    newDiv.appendChild(p);
-    newDiv.setAttribute("class","newDiv");
-    img.height = 100;
-    img.width = 100;
+    var imgAQP = document.createElement('img');
+    imgAQP.src = data['AQP'][turma]['students'][i]['photo'];
+    var newDivAQP = document.createElement("div");
+    var nameAQP = data['AQP'][turma]['students'][i]['name'];
+    pAQP = document.createElement('p'); 
+    pAQP.innerHTML = nameAQP;
+    studentsListAQP.appendChild(newDivAQP);
+    newDivAQP.appendChild(imgAQP);
+    newDivAQP.appendChild(pAQP);
+    newDivAQP.setAttribute("class","newDiv");
+    imgAQP.height = 100;
+    imgAQP.width = 100;
+  }
+}
+
+
+// ********************ALUNAS CDMX***********************
+var studentsListCDMX = document.getElementById('studentsListCDMX')
+for (turma in data['CDMX']) {
+  for (i in data['CDMX'][turma]['students']){
+    var imgCDMX = document.createElement('img');
+    imgCDMX.src = data['CDMX'][turma]['students'][i]['photo'];
+    var newDivCDMX = document.createElement("div");
+    var nameCDMX = data['CDMX'][turma]['students'][i]['name'];
+    pCDMX = document.createElement('p'); 
+    pCDMX.innerHTML = nameCDMX;
+    studentsListCDMX.appendChild(newDivCDMX);
+    newDivCDMX.appendChild(imgCDMX);
+    newDivCDMX.appendChild(pCDMX);
+    newDivCDMX.setAttribute("class","newDiv");
+    imgCDMX.height = 100;
+    imgCDMX.width = 100;
+  }
+}
+
+
+// ********************ALUNAS LIM***********************
+var studentsListLIM = document.getElementById('studentsListLIM')
+for (turma in data['LIM']) {
+  for (i in data['LIM'][turma]['students']){
+    var imgLIM = document.createElement('img');
+    imgLIM.src = data['LIM'][turma]['students'][i]['photo'];
+    var newDivLIM = document.createElement("div");
+    var nameLIM = data['LIM'][turma]['students'][i]['name'];
+    pLIM = document.createElement('p'); 
+    pLIM.innerHTML = nameLIM;
+    studentsListLIM.appendChild(newDivLIM);
+    newDivLIM.appendChild(imgLIM);
+    newDivLIM.appendChild(pLIM);
+    newDivLIM.setAttribute("class","newDiv");
+    imgLIM.height = 100;
+    imgLIM.width = 100;
+  }
+}
+
+
+// ********************ALUNAS SCL***********************
+var studentsListSCL = document.getElementById('studentsListSCL')
+for (turma in data['SCL']) {
+  for (i in data['SCL'][turma]['students']){
+    var imgSCL = document.createElement('img');
+    imgSCL.src = data['SCL'][turma]['students'][i]['photo'];
+    var newDivSCL = document.createElement("div");
+    var nameSCL = data['SCL'][turma]['students'][i]['name'];
+    pSCL = document.createElement('p'); 
+    pSCL.innerHTML = nameSCL;
+    studentsListSCL.appendChild(newDivSCL);
+    newDivSCL.appendChild(imgSCL);
+    newDivSCL.appendChild(pSCL);
+    newDivSCL.setAttribute("class","newDiv");
+    imgSCL.height = 100;
+    imgSCL.width = 100;
   }
 }
