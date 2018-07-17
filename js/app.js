@@ -19,8 +19,8 @@ google.charts.setOnLoadCallback(donutchartActiveAQP);
 function donutchartActiveAQP() {
   var chartData = google.visualization.arrayToDataTable([
     ['',''],
-    ['presentes',activeTrueAQP],
-    ['desistentes',activeFalseAQP],
+    ['Presentes',activeTrueAQP],
+    ['Desistentes',activeFalseAQP],
   ]);
   var options = {
     title: 'Número de alunas presentes e desistentes em Arequipa',
@@ -229,8 +229,8 @@ google.charts.setOnLoadCallback(donutchartActiveCDMX);
 function donutchartActiveCDMX() {
   var chartData = google.visualization.arrayToDataTable([
     ['',''],
-    ['presentes',activeTrueCDMX],
-    ['desistentes',activeFalseCDMX],
+    ['Presentes',activeTrueCDMX],
+    ['Desistentes',activeFalseCDMX],
   ]);
   var options = {
     title: 'Número de alunas presentes e desistentes na Cidade do México',
@@ -424,8 +424,8 @@ google.charts.setOnLoadCallback(donutchartActiveLIM);
 function donutchartActiveLIM() {
   var chartData = google.visualization.arrayToDataTable([
     ['',''],
-    ['presentes',activeTrueLIM],
-    ['desistentes',activeFalseLIM],
+    ['Presentes',activeTrueLIM],
+    ['Desistentes',activeFalseLIM],
   ]);
   var options = {
     title: 'Número de alunas presentes e desistentes em Lima',
@@ -674,8 +674,8 @@ google.charts.setOnLoadCallback(donutchartActiveSCL);
 function donutchartActiveSCL() {
   var chartData = google.visualization.arrayToDataTable([
     ['',''],
-    ['presentes',activeTrueSCL],
-    ['desistentes',activeFalseSCL],
+    ['Presentes',activeTrueSCL],
+    ['Desistentes',activeFalseSCL],
   ]);
   var options = {
     title: 'Número de alunas presentes e desistentes em Santiago',
@@ -929,8 +929,8 @@ function donutchartActiveLAB() {
   var activeFalseLab = activeFalseAQP + activeFalseCDMX + activeFalseLIM +activeFalseSCL;
   var chartData = google.visualization.arrayToDataTable([
     ['',''],
-    ['presentes',activeTrueLab],
-    ['desistentes',activeFalseLab],
+    ['Presentes',activeTrueLab],
+    ['Desistentes',activeFalseLab],
   ]);
   var options = {
     title: 'Número de alunas presentes e desistentes na Laboratória',
@@ -2084,7 +2084,8 @@ var studentsListLIM = document.getElementById('studentsListLIM')
 for (turma in data['LIM']) {
   for (i in data['LIM'][turma]['students']){
     var imgLIM = document.createElement('img');
-    imgLIM.src = data['LIM'][turma]['students'][i]['photo'];
+    imgLIM.src = data['LIM'][turma]['students'][i]['photo']; 
+    
     var newDivLIM = document.createElement("div");
     var nameLIM = data['LIM'][turma]['students'][i]['name'];
     pLIM = document.createElement('p'); 

@@ -40,13 +40,7 @@
 
   
   <!-- ************************* MENU DROP DOWN ********************** -->
-  <select id="dropDown" name="dropDown">
-    <option value="none" selected>Selecione a Sede</option>
-      <option value="#s1">Arequipa</option>
-      <option value="#s2">Lima</option>
-      <option value="#s3">Cidade do México</option>
-      <option value="#s4">Santiago</option>   
-  </select>
+ 
 
 
   <!-- ************************* MENU ********************** -->
@@ -73,8 +67,24 @@
           </li>
       </ul>
   </nav> -->
+<div id ="dropMenu">
+  <!-- <nav id = "menuAncora"> -->
+  <select id="dropDown" name="dropDown">
+    <option value="none" selected>Selecione a Sede</option>
+      <option value="#sAQP">Arequipa</option>
+       <option value="#sAQPA">Alunas - Arequipa</option>  
+      <option value="#sLIM">Lima</option>
+      <option value="#sLIMA">Lima - Alunas</option>   
+      <option value="#sCDMX">Cidade do México</option>
+      <option value="#sCDMXA">Cidade do México - Alunas</option>  
+      <option value="#sSCL">Santiago</option>   
+      <option value="#sSCLA">Santiago- Alunas</option>  
+  </select>
+<!-- </nav> -->
 </div>
 </div>
+</div>
+
 <div id="margin" style="width: 100%; height: 110px;"></div>
 
   <!-- *************************LAB********************** -->
@@ -85,7 +95,7 @@
   </div>
 
   <!-- *************************AQP********************** -->
-  <a name=s1 class="sp"></a>
+  <a name =sAQP class="sp"></a>
   <h1 class="title">Arequipa</h1>
   <div class="section">
     <!--*********ALUNAS ATIVAS**************-->
@@ -111,7 +121,7 @@
   </div>
 
   <!-- *************************CDMX********************** -->
-  <span id="l2" class="sp"></span>
+  <a name =sCDMX class="sp"></a>
   <h1  class="title">Cidade do México</h1>
   <div class="section">
     <!--************ALUNAS ATIVAS**************-->
@@ -137,7 +147,7 @@
   </div>
 
   <!-- *************************LIM********************** -->
-  <span id="l3" class="sp"></span>
+  <a name =sLIM class="sp"></a>
   <h1  class="title">Lima</h1>
   <div class="section">
     <!--************ALUNAS ATIVAS**************-->
@@ -165,7 +175,7 @@
   </div>
 
   <!-- *************************SCL********************** -->
-  <span id="l4" class="sp"></span>
+  <a name =sSCL class="sp"></a>
   <h1 class="title">Santiago</h1>
   <div class="section">
     <!--***********ALUNAS ATIVAS**************-->
@@ -197,7 +207,7 @@
   <!-- ********************ALUNAS*********************** -->
   <div id = "alunas" class ="sp">  </div>
 
-  <ul id="menuAlunas">
+  <!-- <ul id="menuAlunas"> 
         <li>
             <a href="#alunasAQP">AREQUIPA</a>
             <br/>
@@ -214,23 +224,24 @@
             <a href="#alunasSCL">SANTIAGO DO CHILE</a>
             <br/>
         </li>
-    </ul>
-  <span  id= "alunasAQP" class="sp"></span>  
+      </ul> -->
+
+  <a id= "sAQPA" class="sp"></a>  
   
  
   <h1  class="title">Alunas - Arequipa</h1>
  
   <div id="studentsListAQP" class="studentsList"></div>
 
-  <span id= "alunasCDMX" class="sp"></span>
+  <a id= "sCDMXA" class="sp"></a>
   <h1  class="title">Alunas - Cidade do México</h1>
   <div id="studentsListCDMX" class="studentsList"></div>
 
-  <span id = "alunasLIM" class="sp"></span>
+  <a id = "sLIMA" class="sp"></a>
   <h1  class="title">Alunas - Lima</h1>
   <div id="studentsListLIM" class="studentsList"></div>
 
-  <span id = "alunasSCL"  class="sp"></span>
+  <a id = "sSCLA"  class="sp"></a>
   <h1 class="title">Alunas - Santiago</h1>
   <div id="studentsListSCL" class="studentsList"></div>
 
@@ -243,7 +254,7 @@
          <h1 id="contato">Contato</h1>
         </div>
         <div id="info">
-          <p>Mayara Ramos Rebelo<br>maya.r.rebelo@gmail.com</p>
+          <p >Mayara Ramos Rebelo<br>maya.r.rebelo@gmail.com</p>
           <p>Rosinês Almeida<br>rosines.almeida@gmail.com</p>
         </div>
       </div>  

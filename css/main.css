@@ -60,7 +60,7 @@ h1 {
   border-bottom: 3px solid #ffe521;
 }
 
-/*************header************/
+/*************HEADER************/
 #header{
   display: flex;
   justify-content: space-around; 
@@ -129,13 +129,20 @@ margin-left: 60px;
   margin-top: -110px; /*same height as header*/
   visibility: hidden;
 }
+/*****MENU SELECT***/
+#dropMenu{
+  text-align: end; 
+  margin: 20px 40px 0px 0px; 
+}
 
-#menuAncora{
+/****SEÇÃO DO MENU EM LISTA*/
+/* #menuAncora{ 
   display: flex;
  justify-content: flex-end;
  background-color: white;
  height: 72px;
-}
+}*/
+/*
 #menuSede{
 list-style-type: none;
 display: flex;
@@ -150,14 +157,10 @@ color: pink;
 text-decoration: none;
 color: black;
 border-bottom: 1.2px solid #ff009e;
-/*border-bottom: 1.2px solid #56f89a;*/
-}
-.icon-user{
-  margin: 2px 0px 0px 7px;
-  /* margin: 8px; */
-  font-size: 2.0em;
-  padding: 0;
-}
+/*border-bottom: 1.2px solid #56f89a;
+}*/
+
+
 
 /***************SEÇÃO FOOTER********/
 
