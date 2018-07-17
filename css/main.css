@@ -49,6 +49,8 @@ h1 {
   margin-bottom: 50px;
 }
 .title {
+  text-decoration: underline;
+  text-decoration-color: #ffe521;
   display: flex;
   margin-left: 10%;
 }
