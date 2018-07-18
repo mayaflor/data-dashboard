@@ -132,7 +132,7 @@ margin-left: 60px;
 /*****MENU SELECT***/
 #dropMenu{
   text-align: end; 
-  margin: 20px 40px 0px 0px; 
+  margin: 10px 60px 0px 0px; 
 }
 
 /****SEÇÃO DO MENU EM LISTA*/
@@ -241,3 +241,20 @@ border-bottom: 1.2px solid #ff009e;
     /*border-bottom: 1.2px solid #56f89a;*/
   }
 
+#dropDown {
+  outline: none;
+  cursor: pointer;
+  border-color: #FF009E;
+  font-family: 'open_sansregular', sans-serif;
+  font-size: 20px;
+  border-radius: 50px;
+}
+
+/* #dropDown:hover {
+  background-color: #FF009E;
+} */
+
+/* 
+option option:hover option:checked {
+  background-color :#56f89a !important;
+} */
