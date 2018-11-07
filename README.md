@@ -2,8 +2,9 @@
 
 ## Objetivo
 Dashboard baseada em dados de estudantes da Laboratoria.
+Trabalho realizado com @mayaflor
 
-<img src = ''>
+<img src = 'https://user-images.githubusercontent.com/39601714/48135265-4c6c4000-e294-11e8-8745-103f115fd482.png'>
 
 ## Funcionalidadas
 Dados que compõem o dashboard:
@@ -19,4 +20,8 @@ Dados que compõem o dashboard:
 * A pontuação média das mestres Jedi;
 * Representação gráfica com o uso do Google Charts
  
+ ## Tecnologia utilizada 
+ * HTML5
+ * CSS3
+ * JavaScript
  
