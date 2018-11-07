@@ -1,8 +1,8 @@
 # Data Dashboard
 
 ## Objetivo
-Dashboard baseada em dados de estudantes da Laboratoria.
-Trabalho realizado com @mayaflor
+<p>Dashboard baseada em dados de estudantes da Laboratoria.</p>
+<p> Trabalho realizado com @mayaflor </p>
 
 <img src = 'https://user-images.githubusercontent.com/39601714/48135265-4c6c4000-e294-11e8-8745-103f115fd482.png'>
 
