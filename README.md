@@ -1,25 +1,22 @@
 # Data Dashboard
 
-* **Track:** _Common Core_
-* **Curso:** _Creando tu primer sitio web interactivo_
-* **Unidad:** _Producto final_
+## Objetivo
+Dashboard baseada em dados de estudantes da Laboratoria.
 
-***
+<img src = ''>
 
-## Flujo de trabajo
-
-1. Debes realizar un [**fork**](https://gist.github.com/ivandevp/1de47ae69a5e139a6622d78c882e1f74)
-   de este repositorio.
-
-2. Luego deberás **clonar** tu fork en tu máquina. Recuerda que el comando a usar
-   es `git clone` y su estructura normalmente se ve así:
-
-   ```bash
-   git clone https://github.com/<nombre-de-usuario>/freelancer.git
-   ```
-
-3. Cuando hayas terminado tu producto, envía un Pull Request a este repositorio
-   (puedes solicitar apoyo de tus profes para este paso).
-
-> Nota: No olvides que es una buena práctica describir tu proyecto en este
-> archivo `README.md` y también desplegar tu web a Github Pages :smiley:.
+## Funcionalidadas
+Dados que compõem o dashboard:
+* O número total de alunas presentes pela sede e geração;
+* A porcentagem de alunas desistentes;
+* O número de alunas que excedem a meta de pontos, em média, de todos os sprints realizados. O objetivo dos pontos é 70% do total de pontos em Habilidades socio-emocionais e Tech;
+* A porcentagem que representa os dados anteriores em relação ao total de alunas;
+* O Net Promoter Score (NPS) médio dos sprints realizados. O NPS é calculado com base no levantamento que as estudantes respondem em relação à recomendação que dariam da Laboratoria 
+* A quantidade e porcentagem que representa o total de alunas que excedem a meta de pontos técnicos em média e sprint;
+* O valor e a porcentagem que representam o número total de alunas que excedem a meta de pontos de HSE, em média, e por sprint;
+* O percentual de alunas satisfeitas com a experiência da Laboratoria;
+* A pontuação média das professoras;
+* A pontuação média das mestres Jedi;
+* Representação gráfica com o uso do Google Charts
+ 
+ 
